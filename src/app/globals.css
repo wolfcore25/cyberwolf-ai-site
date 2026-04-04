@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --cyber-orange: #FF6A00;
+  --cyber-orange-dim: #CC5500;
+  --cyber-dark: #0A0A0A;
+  --cyber-darker: #050505;
+  --cyber-gray: #1A1A1A;
+  --cyber-border: #2A2A2A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cyber-darker);
+}
+
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.3), 0 0 60px rgba(255, 106, 0, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+}
+
+.border-glow {
+  border: 1px solid rgba(255, 106, 0, 0.3);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 106, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Gradient line */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyber-orange), transparent);
+}
+
+/* Hover card effect */
+.service-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 106, 0, 0.1);
+}
+
+.service-card:hover {
+  border-color: rgba(255, 106, 0, 0.4);
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.1);
+  transform: translateY(-2px);
+}
