@@ -294,7 +294,7 @@ function Contact() {
             {
               label: "Upwork",
               value: "View Profile →",
-              href: "https://www.upwork.com/freelancers/~01placeholder",
+              href: "https://www.upwork.com/freelancers/~017f642b6dca185e6b",
             },
             {
               label: "LinkedIn",
