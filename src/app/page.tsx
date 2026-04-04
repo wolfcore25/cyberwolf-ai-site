@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[var(--cyber-border)]">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <Image src="/wolf-logo.svg" alt="CyberWolf" width={36} height={36} />
           <span className="text-[var(--cyber-blue)] font-bold text-xl tracking-tight">
             CYBERWOLF
           </span>
@@ -249,9 +251,9 @@ function About() {
         </div>
 
         <div className="border-glow rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)] text-center">
-          {/* Avatar placeholder */}
-          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--cyber-blue)] to-[var(--cyber-blue-dim)] mx-auto mb-6 flex items-center justify-center text-3xl font-bold text-black">
-            GS
+          {/* Wolf logo avatar */}
+          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--cyber-gray)] to-black mx-auto mb-6 flex items-center justify-center border border-[var(--cyber-border)]">
+            <Image src="/wolf-logo.svg" alt="CyberWolf" width={60} height={60} />
           </div>
           <h3 className="text-2xl font-bold mb-2">Greg Schwartz</h3>
           <p className="text-[var(--cyber-blue)] text-sm font-mono mb-6">

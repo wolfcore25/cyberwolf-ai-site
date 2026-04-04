@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Wolf head silhouette - sleek geometric style -->
+  <defs>
+    <linearGradient id="wolfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8"/>
+      <stop offset="50%" style="stop-color:#C0C0C0"/>
+      <stop offset="100%" style="stop-color:#00A3FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Left ear -->
+  <polygon points="25,45 35,10 45,40" fill="url(#wolfGrad)"/>
+  <!-- Right ear -->
+  <polygon points="75,45 65,10 55,40" fill="url(#wolfGrad)"/>
+  <!-- Head shape -->
+  <path d="M30,45 Q30,30 40,35 L50,25 L60,35 Q70,30 70,45 L70,60 Q70,75 60,80 L55,85 Q50,90 45,85 L40,80 Q30,75 30,60 Z" fill="url(#wolfGrad)"/>
+  <!-- Eyes -->
+  <ellipse cx="40" cy="50" rx="4" ry="3" fill="#0A0A0A"/>
+  <ellipse cx="60" cy="50" rx="4" ry="3" fill="#0A0A0A"/>
+  <!-- Eye glow -->
+  <ellipse cx="41" cy="49.5" rx="1.5" ry="1" fill="#00A3FF"/>
+  <ellipse cx="61" cy="49.5" rx="1.5" ry="1" fill="#00A3FF"/>
+  <!-- Nose -->
+  <path d="M47,65 L50,62 L53,65 Q50,68 47,65Z" fill="#0A0A0A"/>
+  <!-- Snout line -->
+  <line x1="50" y1="68" x2="50" y2="73" stroke="#0A0A0A" stroke-width="1"/>
+  <!-- Mouth -->
+  <path d="M44,73 Q50,77 56,73" stroke="#0A0A0A" stroke-width="1" fill="none"/>
+</svg>
