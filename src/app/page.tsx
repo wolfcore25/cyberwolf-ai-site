@@ -288,8 +288,8 @@ function Contact() {
           {[
             {
               label: "Email",
-              value: "Gregory.schwartz525@gmail.com",
-              href: "mailto:Gregory.schwartz525@gmail.com",
+              value: "gregory.schwartz525@gmail.com",
+              href: "mailto:gregory.schwartz525@gmail.com",
             },
             {
               label: "Upwork",
