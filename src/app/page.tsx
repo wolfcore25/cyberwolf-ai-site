@@ -1,30 +1,57 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[var(--cyber-border)]">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image src="/wolf-logo.svg" alt="CyberWolf" width={36} height={36} />
-          <span className="text-[var(--cyber-blue)] font-bold text-xl tracking-tight">
-            CYBERWOLF
-          </span>
-          <span className="text-[var(--cyber-chrome)] text-sm font-light">AI SYSTEMS</span>
-        </div>
+        <Link href="/" className="flex items-center">
+          <Image src="/logo-horizontal-light.png" alt="CyberWolf AI Systems" width={200} height={56} className="h-10 w-auto" />
+        </Link>
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
-          <a href="#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</a>
-          <a href="#how-we-work" className="hover:text-[var(--cyber-blue)] transition-colors">How We Work</a>
-          <a href="#portfolio" className="hover:text-[var(--cyber-blue)] transition-colors">Portfolio</a>
-          <a href="#about" className="hover:text-[var(--cyber-blue)] transition-colors">About</a>
-          <a
-            href="#contact"
+          <Link href="/web-solutions" className="hover:text-[var(--cyber-blue)] transition-colors">Web Solutions</Link>
+          <Link href="/#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</Link>
+          <Link href="/#how-we-work" className="hover:text-[var(--cyber-blue)] transition-colors">How We Work</Link>
+          <Link href="/#portfolio" className="hover:text-[var(--cyber-blue)] transition-colors">Portfolio</Link>
+          <Link href="/#about" className="hover:text-[var(--cyber-blue)] transition-colors">About</Link>
+          <Link
+            href="/#contact"
             className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded hover:bg-[var(--cyber-blue-dim)] transition-colors"
           >
             Get Started
-          </a>
+          </Link>
         </div>
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden text-white text-2xl focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
       </div>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-black/95 border-t border-[var(--cyber-border)] px-6 py-6 flex flex-col gap-4 text-sm">
+          <Link href="/web-solutions" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Web Solutions</Link>
+          <Link href="/#services" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link href="/#how-we-work" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>How We Work</Link>
+          <Link href="/#portfolio" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+          <Link href="/#about" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link
+            href="/#contact"
+            className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded text-center hover:bg-[var(--cyber-blue-dim)] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Get Started
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
@@ -40,14 +67,9 @@ function Hero() {
           Production AI Agent Development
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          <span className="text-white">Cyber</span>
-          <span className="text-[var(--cyber-blue)] glow-text">Wolf</span>
-          <br />
-          <span className="text-[var(--cyber-chrome)] text-3xl md:text-4xl font-light">
-            AI Systems
-          </span>
-        </h1>
+        <div className="mb-6 flex justify-center">
+          <Image src="/logo-main.png" alt="CyberWolf AI Systems" width={300} height={304} className="w-64 md:w-80 h-auto drop-shadow-[0_0_30px_rgba(0,163,255,0.3)]" />
+        </div>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
           We build AI agents that answer phones, qualify leads, book appointments,
@@ -100,6 +122,12 @@ const services = [
     title: "Workflow Automation",
     desc: "Connect your CRM, APIs, SMS, and email into intelligent automated pipelines. Reduce manual work by 80% with AI-driven decision routing.",
   },
+  {
+    icon: "🌐",
+    title: "AI-Ready Web Development",
+    desc: "Modern, fast websites with AI chatbots and voice agents built in. Your customers get answers 24/7 while you capture every lead. Turnkey packages from $149/month.",
+    link: "/web-solutions",
+  },
 ];
 
 function Services() {
@@ -114,18 +142,38 @@ function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="service-card bg-[var(--cyber-gray)] rounded-lg p-6"
-            >
-              <div className="text-3xl mb-4">{s.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-white">
-                {s.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
+          {services.map((s) => {
+            const inner = (
+              <>
+                <div className="text-3xl mb-4">{s.icon}</div>
+                <h3 className="text-xl font-semibold mb-3 text-white">
+                  {s.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                {s.link && (
+                  <div className="mt-4 text-[var(--cyber-blue)] text-sm font-semibold">
+                    Learn More →
+                  </div>
+                )}
+              </>
+            );
+            return s.link ? (
+              <Link
+                key={s.title}
+                href={s.link}
+                className="service-card bg-[var(--cyber-gray)] rounded-lg p-6 block hover:border-[var(--cyber-blue)]/50 transition-all"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div
+                key={s.title}
+                className="service-card bg-[var(--cyber-gray)] rounded-lg p-6"
+              >
+                {inner}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -252,8 +300,8 @@ function About() {
 
         <div className="border-glow rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)] text-center">
           {/* Wolf logo avatar */}
-          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[var(--cyber-gray)] to-black mx-auto mb-6 flex items-center justify-center border border-[var(--cyber-border)]">
-            <Image src="/wolf-logo.svg" alt="CyberWolf" width={60} height={60} />
+          <div className="w-28 h-28 mx-auto mb-6 flex items-center justify-center">
+            <Image src="/logo-main.png" alt="CyberWolf" width={112} height={112} className="drop-shadow-[0_0_15px_rgba(0,163,255,0.3)]" />
           </div>
           <h3 className="text-2xl font-bold mb-2">Greg Schwartz</h3>
           <p className="text-[var(--cyber-blue)] text-sm font-mono mb-6">
