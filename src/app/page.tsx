@@ -336,8 +336,8 @@ function Contact() {
           {[
             {
               label: "Email",
-              value: "gregory.schwartz525@gmail.com",
-              href: "mailto:gregory.schwartz525@gmail.com",
+              value: "gregs@cyberwolfaisystems.com",
+              href: "mailto:gregs@cyberwolfaisystems.com",
             },
             {
               label: "Upwork",

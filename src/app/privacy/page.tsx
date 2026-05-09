@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: April 3, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: May 9, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -64,6 +64,12 @@ export default function PrivacyPolicy() {
               <li>To comply with legal obligations</li>
               <li>To protect our rights and prevent misuse</li>
             </ul>
+            <p className="mt-4">
+              <strong className="text-white">SMS/Text Communications:</strong> We may send SMS
+              messages for appointment confirmations, service follow-ups, alerts, and status
+              updates. Message frequency varies. Message and data rates may apply. You may opt
+              out of SMS communications at any time by replying STOP. Reply HELP for assistance.
+            </p>
           </section>
 
           <section>
@@ -108,8 +114,8 @@ export default function PrivacyPolicy() {
             </ul>
             <p className="mt-2">
               To exercise these rights, contact us at{" "}
-              <a href="mailto:Gregory.schwartz525@gmail.com" className="text-[var(--cyber-orange)] hover:underline">
-                Gregory.schwartz525@gmail.com
+              <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-orange)] hover:underline">
+                gregs@cyberwolfaisystems.com
               </a>.
             </p>
           </section>
@@ -140,8 +146,8 @@ export default function PrivacyPolicy() {
             <p className="mt-2">
               <strong className="text-white">CyberWolf AI Systems</strong><br />
               Email:{" "}
-              <a href="mailto:Gregory.schwartz525@gmail.com" className="text-[var(--cyber-orange)] hover:underline">
-                Gregory.schwartz525@gmail.com
+              <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-orange)] hover:underline">
+                gregs@cyberwolfaisystems.com
               </a>
             </p>
           </section>

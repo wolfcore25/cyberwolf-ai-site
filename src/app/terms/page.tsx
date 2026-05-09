@@ -151,8 +151,8 @@ export default function TermsOfService() {
             <p className="mt-2">
               <strong className="text-white">CyberWolf AI Systems</strong><br />
               Email:{" "}
-              <a href="mailto:Gregory.schwartz525@gmail.com" className="text-[var(--cyber-orange)] hover:underline">
-                Gregory.schwartz525@gmail.com
+              <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-orange)] hover:underline">
+                gregs@cyberwolfaisystems.com
               </a>
             </p>
           </section>
