@@ -9,12 +9,8 @@ function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[var(--cyber-border)]">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/wolf-logo.svg" alt="CyberWolf" width={36} height={36} />
-          <span className="text-[var(--cyber-blue)] font-bold text-xl tracking-tight">
-            CYBERWOLF
-          </span>
-          <span className="text-[var(--cyber-chrome)] text-sm font-light">AI SYSTEMS</span>
+        <Link href="/" className="flex items-center">
+          <Image src="/cody-cyberwolf-logo.jpg" alt="CyberWolf AI Systems" width={1254} height={1254} className="h-12 w-auto rounded-sm" />
         </Link>
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
