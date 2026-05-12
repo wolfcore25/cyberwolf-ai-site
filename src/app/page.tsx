@@ -62,7 +62,7 @@ function Hero() {
       {/* Radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--cyber-blue)] rounded-full opacity-[0.04] blur-[120px]" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-20">
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-32 md:pt-24">
         <div className="inline-block px-4 py-1 border border-[var(--cyber-blue)]/30 rounded-full text-[var(--cyber-blue)] text-xs tracking-widest uppercase mb-8">
           Production AI Agent Development
         </div>
