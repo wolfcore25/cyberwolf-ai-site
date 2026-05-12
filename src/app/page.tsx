@@ -309,9 +309,9 @@ function About() {
           </p>
           <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
             20+ years of enterprise sales and business development, now building
-            production AI systems daily. Currently enrolled in the ODSC AI Engineering
-            Accelerator. I don&apos;t just talk about AI — I deploy agents
-            that handle real calls, real customers, and real revenue. Every system
+            production AI systems daily. ODSC AI Engineer Certified. I don&apos;t
+            just talk about AI — I deploy agents that handle real calls, real
+            customers, and real revenue. Every system
             I build runs in production, not in a demo.
           </p>
         </div>
