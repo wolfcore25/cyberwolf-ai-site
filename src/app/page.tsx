@@ -344,8 +344,8 @@ function Contact() {
           {[
             {
               label: "Email",
-              value: "support@cyberwolfaisystems.com",
-              href: "mailto:support@cyberwolfaisystems.com",
+              value: "gregs@cyberwolfaisystems.com",
+              href: "mailto:gregs@cyberwolfaisystems.com",
             },
             {
               label: "Upwork",

@@ -164,7 +164,7 @@ export default function TermsOfService() {
             <h2 className="text-xl font-semibold text-white mb-3">15. Contact</h2>
             <p>
               <strong className="text-white">CyberWolf AI Systems</strong><br />
-              Contact email: <a href="mailto:support@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">support@cyberwolfaisystems.com</a><br />
+              Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a><br />
               Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a>
             </p>
           </section>

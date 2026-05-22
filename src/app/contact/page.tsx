@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div className="border-glow rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)] text-gray-300 leading-relaxed">
             <p className="mb-4"><strong className="text-white">CyberWolf AI Systems</strong></p>
             <p>
-              Contact email: <a href="mailto:support@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">support@cyberwolfaisystems.com</a>
+              Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a>
             </p>
             <p>
               Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a>

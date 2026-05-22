@@ -37,7 +37,7 @@ export default function DineLinePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:support@cyberwolfaisystems.com?subject=DineLine%20Demo%20Request"
+              href="mailto:gregs@cyberwolfaisystems.com?subject=DineLine%20Demo%20Request"
               className="px-8 py-3 bg-[var(--cyber-blue)] text-white font-bold rounded glow-blue hover:bg-[var(--cyber-blue-dim)] transition-all text-center"
             >
               Request a DineLine Demo
@@ -115,7 +115,7 @@ export default function DineLinePage() {
           <h2 className="text-3xl font-bold mb-6 text-white">Contact identity</h2>
           <div className="bg-[var(--cyber-gray)] rounded-lg p-6 text-gray-300 leading-relaxed">
             <p><strong className="text-white">CyberWolf AI Systems</strong></p>
-            <p>Contact email: <a href="mailto:support@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">support@cyberwolfaisystems.com</a></p>
+            <p>Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a></p>
             <p>Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a></p>
           </div>
         </div>

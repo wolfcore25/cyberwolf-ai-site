@@ -115,8 +115,8 @@ export default function PrivacyPolicy() {
             <p>You may request access, correction, deletion, or a copy of personal information we hold about you. You may opt out of SMS by replying STOP.</p>
             <p className="mt-2">
               To exercise privacy rights or ask questions, contact us at{" "}
-              <a href="mailto:support@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">
-                support@cyberwolfaisystems.com
+              <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">
+                gregs@cyberwolfaisystems.com
               </a>.
             </p>
           </section>
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-semibold text-white mb-3">10. Contact</h2>
             <p>
               <strong className="text-white">CyberWolf AI Systems</strong><br />
-              Contact email: <a href="mailto:support@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">support@cyberwolfaisystems.com</a><br />
+              Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a><br />
               Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a>
             </p>
           </section>
