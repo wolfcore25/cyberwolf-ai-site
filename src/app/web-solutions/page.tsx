@@ -15,6 +15,7 @@ function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
           <Link href="/web-solutions" className="text-[var(--cyber-blue)] transition-colors">Web Solutions</Link>
+          <Link href="/dineline" className="hover:text-[var(--cyber-blue)] transition-colors">DineLine</Link>
           <Link href="/#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</Link>
           <Link href="/#about" className="hover:text-[var(--cyber-blue)] transition-colors">About</Link>
           <Link
@@ -37,6 +38,7 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-black/95 border-t border-[var(--cyber-border)] px-6 py-6 flex flex-col gap-4 text-sm">
           <Link href="/web-solutions" className="text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Web Solutions</Link>
+          <Link href="/dineline" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>DineLine</Link>
           <Link href="/#services" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link href="/#about" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
           <Link
@@ -74,7 +76,7 @@ const tiers = [
       "Multi-page site",
       "AI chatbot (10,000 convos/mo)",
       "AI phone agent (200 min/mo)",
-      "Lead capture forms",
+      "Customer inquiry forms",
       "CRM integration",
       "Priority support",
     ],
@@ -96,11 +98,11 @@ const tiers = [
 
 const included = [
   { icon: "⚡", title: "Modern Tech Stack", desc: "Next.js, React, Tailwind — fast, scalable, future-proof." },
-  { icon: "🤖", title: "AI Chatbot", desc: "24/7 conversational AI that answers questions and captures leads." },
+  { icon: "🤖", title: "AI Chatbot", desc: "24/7 conversational AI that answers questions and collects customer inquiries." },
   { icon: "📞", title: "Voice Agent", desc: "AI phone agent that handles calls with natural-sounding voice." },
   { icon: "🔍", title: "SEO Optimized", desc: "Built for search engines from day one. Get found by your customers." },
   { icon: "📱", title: "Mobile Responsive", desc: "Pixel-perfect on every device — phone, tablet, and desktop." },
-  { icon: "📊", title: "Monthly Analytics", desc: "Clear reports on traffic, leads, and AI agent performance." },
+  { icon: "📊", title: "Monthly Analytics", desc: "Clear reports on traffic, customer inquiries, and AI agent performance." },
 ];
 
 const steps = [
@@ -238,7 +240,7 @@ export default function WebSolutions() {
             Ready to Launch Your <span className="text-[var(--cyber-blue)]">AI-Powered</span> Website?
           </h2>
           <p className="text-gray-400 text-lg mb-10">
-            Stop losing leads to a static website. Let AI work for you around the clock.
+            Stop missing customer inquiries because of a static website. Let AI work for you around the clock.
           </p>
           <Link
             href="/#contact"
@@ -260,7 +262,10 @@ export default function WebSolutions() {
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-[var(--cyber-blue)] transition-colors">
-              Terms of Service
+              Terms
+            </Link>
+            <Link href="/contact" className="hover:text-[var(--cyber-blue)] transition-colors">
+              Contact
             </Link>
           </div>
         </div>

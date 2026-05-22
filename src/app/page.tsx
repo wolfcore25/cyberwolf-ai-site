@@ -15,6 +15,7 @@ function Navbar() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
           <Link href="/web-solutions" className="hover:text-[var(--cyber-blue)] transition-colors">Web Solutions</Link>
+          <Link href="/dineline" className="hover:text-[var(--cyber-blue)] transition-colors">DineLine</Link>
           <Link href="/#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</Link>
           <Link href="/#how-we-work" className="hover:text-[var(--cyber-blue)] transition-colors">How We Work</Link>
           <Link href="/#portfolio" className="hover:text-[var(--cyber-blue)] transition-colors">Portfolio</Link>
@@ -39,6 +40,7 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-black/95 border-t border-[var(--cyber-border)] px-6 py-6 flex flex-col gap-4 text-sm">
           <Link href="/web-solutions" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Web Solutions</Link>
+          <Link href="/dineline" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>DineLine</Link>
           <Link href="/#services" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link href="/#how-we-work" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>How We Work</Link>
           <Link href="/#portfolio" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Portfolio</Link>
@@ -72,7 +74,7 @@ function Hero() {
         </div>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We build AI agents that answer phones, qualify leads, book appointments,
+          We build AI agents that answer phones, handle customer requests, book appointments,
           and automate workflows — deployed on <em>your</em> accounts,
           owned by <em>you</em>.
         </p>
@@ -105,7 +107,7 @@ const services = [
   {
     icon: "📞",
     title: "Voice AI & Phone Automation",
-    desc: "AI-powered phone systems using ElevenLabs and Twilio. Inbound call handling, outbound campaigns, voicemail drops, and natural-sounding voice agents.",
+    desc: "AI-powered phone systems using ElevenLabs and Twilio. Inbound call handling, customer-requested support messages, booking status updates, and natural-sounding voice agents.",
   },
   {
     icon: "🔗",
@@ -124,8 +126,14 @@ const services = [
   },
   {
     icon: "🌐",
+    title: "DineLine",
+    desc: "Voice-based restaurant booking assistance with customer-requested transactional updates, reservation confirmations, and booking status updates by SMS after consent.",
+    link: "/dineline",
+  },
+  {
+    icon: "🌐",
     title: "AI-Ready Web Development",
-    desc: "Modern, fast websites with AI chatbots and voice agents built in. Your customers get answers 24/7 while you capture every lead. Turnkey packages from $149/month.",
+    desc: "Modern, fast websites with AI chatbots and voice agents built in. Your customers get answers 24/7 while you collect every inquiry. Turnkey packages from $149/month.",
     link: "/web-solutions",
   },
 ];
@@ -259,8 +267,8 @@ function Portfolio() {
               tag: "Agent Architecture",
             },
             {
-              title: "Lead Qualification Bot",
-              desc: "AI agent that qualifies inbound leads via SMS and voice, scoring and routing to the right sales rep in real-time.",
+              title: "Customer Intake Assistant",
+              desc: "AI agent that handles customer-requested inquiries via chat and voice, collecting details and routing requests to the right team member in real time.",
               tag: "Automation",
             },
           ].map((p) => (
@@ -336,8 +344,8 @@ function Contact() {
           {[
             {
               label: "Email",
-              value: "gregs@cyberwolfaisystems.com",
-              href: "mailto:gregs@cyberwolfaisystems.com",
+              value: "support@cyberwolfaisystems.com",
+              href: "mailto:support@cyberwolfaisystems.com",
             },
             {
               label: "Upwork",
@@ -381,7 +389,10 @@ function Footer() {
             Privacy Policy
           </Link>
           <Link href="/terms" className="hover:text-[var(--cyber-blue)] transition-colors">
-            Terms of Service
+            Terms
+          </Link>
+          <Link href="/contact" className="hover:text-[var(--cyber-blue)] transition-colors">
+            Contact
           </Link>
         </div>
       </div>
