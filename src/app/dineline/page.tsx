@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "DineLine — CyberWolf AI Systems",
+  title: "DineLine",
   description:
     "DineLine is a voice-based restaurant booking assistant by CyberWolf AI Systems with customer-requested transactional booking updates by SMS.",
 };

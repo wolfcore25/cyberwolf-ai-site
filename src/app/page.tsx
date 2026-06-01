@@ -1,292 +1,264 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  AuroraBackground,
+  AnimatedGrid,
+  BackgroundBeams,
+  BackgroundGradientAnimation,
+} from "@/components/ui/background-effects";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { VapiWidgetPlaceholder } from "@/components/vapi-widget-placeholder";
+import { AgentMark } from "@/components/agent-mark";
+import { CalendlySection } from "@/components/calendly-section";
+import { MobileStickyActions } from "@/components/mobile-sticky-actions";
+import { SiteFooter } from "@/components/site-footer";
+
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#verticals", label: "Industries" },
+  { href: "#proof", label: "Proof" },
+  { href: "#voice-demo", label: "Voice Demo" },
+  { href: "#book", label: "Book" },
+];
+
+const services = [
+  {
+    icon: "AI",
+    eyebrow: "Agent Build",
+    title: "AI Agent Development",
+    copy: "Custom autonomous agents. From chatbots to multi-step reasoning systems.",
+  },
+  {
+    icon: "24/7",
+    eyebrow: "Voice Stack",
+    title: "Voice AI & Phone Automation",
+    copy: "AI answers your phone. Handles calls. Books appointments. 24/7.",
+  },
+  {
+    icon: "OPS",
+    eyebrow: "Systems",
+    title: "Multi-Agent Architecture",
+    copy: "Orchestrated AI teams: research, execute, verify, report.",
+  },
+  {
+    icon: "EDU",
+    eyebrow: "Enablement",
+    title: "AI Consultation & Training",
+    copy: "Hands-on training. Prompt engineering to full agent deployment.",
+  },
+  {
+    icon: "API",
+    eyebrow: "Automation",
+    title: "Workflow Automation",
+    copy: "CRM, APIs, SMS, and email wired into intelligent pipelines. Less manual work.",
+  },
+  {
+    icon: "WEB",
+    eyebrow: "Web",
+    title: "AI-Ready Websites",
+    copy: "Modern sites with AI chatbots and voice agents built in. From $149/mo.",
+  },
+];
+
+const verticals = [
+  {
+    href: "/restaurants",
+    title: "Restaurants",
+    product: "DineLine",
+    copy: "AI that books reservations by phone and keeps the front desk clear during the rush.",
+  },
+  {
+    href: "/law-firms",
+    title: "Law Firms",
+    product: "Legal Intake",
+    copy: "Qualify leads, collect case details, and schedule consultations after hours.",
+  },
+  {
+    href: "/hvac",
+    title: "HVAC / Plumbing",
+    product: "Emergency Call AI",
+    copy: "Separate true emergencies from next-day jobs without missing a revenue call.",
+  },
+  {
+    href: "/medical",
+    title: "Medical / Dental",
+    product: "Patient Scheduling",
+    copy: "Scheduling, rescheduling, and cancellation support without phone trees.",
+  },
+  {
+    href: "/contractors",
+    title: "Contractors",
+    product: "Lead Conversion",
+    copy: "Turn visitors into booked estimates before competitors call them back.",
+  },
+];
+
+const proofItems = [
+  "DineLine V2: live AI restaurant booking system",
+  "ODSC AI Engineering Accelerator: 96% average",
+  "20+ years enterprise sales and business development",
+  "Systems built around real calls, real customers, real revenue",
+];
+
+const proofBadges = ["Anthropic", "CrewAI", "NVIDIA", "n8n", "VAPI", "ElevenLabs"];
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-[var(--cyber-border)]">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <Image src="/cody-cyberwolf-logo.jpg" alt="CyberWolf AI Systems" width={1254} height={1254} className="h-16 w-auto rounded-sm" />
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#05070b]/75 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+        <Link href="/" className="flex items-center gap-3">
+          <AgentMark />
+          <div className="leading-tight">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[var(--text-primary)]">
+              CyberWolf
+            </p>
+            <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--accent-teal)]">
+              AI Systems
+            </p>
+          </div>
         </Link>
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
-          <Link href="/web-solutions" className="hover:text-[var(--cyber-blue)] transition-colors">Web Solutions</Link>
-          <Link href="/dineline" className="hover:text-[var(--cyber-blue)] transition-colors">DineLine</Link>
-          <Link href="/#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</Link>
-          <Link href="/#how-we-work" className="hover:text-[var(--cyber-blue)] transition-colors">How We Work</Link>
-          <Link href="/#portfolio" className="hover:text-[var(--cyber-blue)] transition-colors">Portfolio</Link>
-          <Link href="/#about" className="hover:text-[var(--cyber-blue)] transition-colors">About</Link>
-          <Link
-            href="/#contact"
-            className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded hover:bg-[var(--cyber-blue-dim)] transition-colors"
-          >
-            Get Started
-          </Link>
-        </div>
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-white text-2xl focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+        <nav className="hidden items-center gap-6 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] lg:flex">
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="transition hover:text-[var(--accent-teal)]">
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a
+          href="#voice-demo"
+          className="hidden rounded-full border border-[var(--accent-teal)]/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent-teal)] transition hover:bg-[var(--accent-teal)] hover:text-black sm:inline-flex"
         >
-          {menuOpen ? "✕" : "☰"}
-        </button>
+          Talk to AI
+        </a>
       </div>
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-black/95 border-t border-[var(--cyber-border)] px-6 py-6 flex flex-col gap-4 text-sm">
-          <Link href="/web-solutions" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Web Solutions</Link>
-          <Link href="/dineline" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>DineLine</Link>
-          <Link href="/#services" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Services</Link>
-          <Link href="/#how-we-work" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>How We Work</Link>
-          <Link href="/#portfolio" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link href="/#about" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link
-            href="/#contact"
-            className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded text-center hover:bg-[var(--cyber-blue-dim)] transition-colors"
-            onClick={() => setMenuOpen(false)}
-          >
-            Get Started
-          </Link>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="grid-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--cyber-blue)] rounded-full opacity-[0.04] blur-[120px]" />
+    <section className="relative min-h-screen overflow-hidden px-6 pt-32">
+      <AuroraBackground />
+      <BackgroundBeams />
+      <AnimatedGrid />
+      <div className="pointer-events-none absolute inset-x-0 top-16 z-[1] mx-auto h-[42rem] max-w-5xl rounded-full bg-[radial-gradient(circle,rgba(0,185,255,0.18)_0%,rgba(70,235,159,0.08)_36%,transparent_70%)] blur-2xl" />
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75 }}
+          className="mb-7 w-full max-w-xs rounded-2xl border border-[var(--border)] bg-white/[0.04] px-3 py-2 text-center text-[8px] font-bold uppercase leading-5 tracking-[0.14em] text-[var(--accent-green)] sm:max-w-sm sm:rounded-full sm:text-xs sm:tracking-[0.28em]"
+        >
+          Other agencies build websites. CyberWolf builds AI employees.
+        </motion.div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10 pt-32 md:pt-24">
-        <div className="inline-block px-4 py-1 border border-[var(--cyber-blue)]/30 rounded-full text-[var(--cyber-blue)] text-xs tracking-widest uppercase mb-8">
-          Production AI Agent Development
+        <div className="mb-8">
+          <Image
+            src="/logo-main.png"
+            alt="CyberWolf AI Systems"
+            width={760}
+            height={760}
+            priority
+            className="cyberwolf-logo-pulse mx-auto h-auto w-72 max-w-[78vw] brightness-125 contrast-125 drop-shadow-[0_0_42px_rgba(0,185,255,0.32)] md:w-[360px]"
+          />
         </div>
 
-        <div className="mb-6 flex justify-center">
-          <Image src="/cody-cyberwolf-logo.jpg" alt="CyberWolf AI Systems" width={1254} height={1254} className="w-80 md:w-96 h-auto drop-shadow-[0_0_30px_rgba(0,163,255,0.3)]" />
-        </div>
+        <h1 className="w-full max-w-xs text-balance text-xl font-black leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-5xl sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.05em]">
+          Your AI employee answers the phone,{" "}
+          <span className="cyber-gradient-text">books the appointment</span>, and never calls in sick.
+        </h1>
 
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          We build AI agents that answer phones, handle customer requests, book appointments,
-          and automate workflows — deployed on <em>your</em> accounts,
-          owned by <em>you</em>.
+        <p className="mt-7 w-full max-w-xs text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
+          Production AI agents that handle real calls, real customers, real revenue. Deployed on
+          your accounts. Owned by you.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="px-8 py-3 bg-[var(--cyber-blue)] text-white font-bold rounded glow-blue hover:bg-[var(--cyber-blue-dim)] transition-all"
-          >
-            Start Your Project →
-          </a>
-          <a
-            href="#services"
-            className="px-8 py-3 border border-gray-700 text-gray-300 rounded hover:border-[var(--cyber-blue)]/50 hover:text-white transition-all"
-          >
-            View Services
-          </a>
+        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+          <MagneticButton href="#voice-demo">Talk to CyberWolf</MagneticButton>
+          <MagneticButton href="#book" variant="secondary">
+            Book a Free Consultation
+          </MagneticButton>
         </div>
       </div>
     </section>
   );
 }
 
-const services = [
-  {
-    icon: "🤖",
-    title: "AI Agent Development",
-    desc: "Custom autonomous agents built with OpenClaw, Claude, and GPT-4o. From simple chatbots to complex multi-step reasoning systems that handle real business logic.",
-  },
-  {
-    icon: "📞",
-    title: "Voice AI & Phone Automation",
-    desc: "AI-powered phone systems using ElevenLabs and Twilio. Inbound call handling, customer-requested support messages, booking status updates, and natural-sounding voice agents.",
-  },
-  {
-    icon: "🔗",
-    title: "Multi-Agent Architecture",
-    desc: "Orchestrated AI systems where specialized agents collaborate — research, execute, verify, and report. Enterprise-grade reliability with startup speed.",
-  },
-  {
-    icon: "🎓",
-    title: "AI Consultation & Training",
-    desc: "Hands-on training for your team. We demystify AI tooling and help you build internal capabilities. From prompt engineering to full agent deployment.",
-  },
-  {
-    icon: "⚡",
-    title: "Workflow Automation",
-    desc: "Connect your CRM, APIs, SMS, and email into intelligent automated pipelines. Reduce manual work by 80% with AI-driven decision routing.",
-  },
-  {
-    icon: "🌐",
-    title: "DineLine",
-    desc: "Voice-based restaurant booking assistance with customer-requested transactional updates, reservation confirmations, and booking status updates by SMS after consent.",
-    link: "/dineline",
-  },
-  {
-    icon: "🌐",
-    title: "AI-Ready Web Development",
-    desc: "Modern, fast websites with AI chatbots and voice agents built in. Your customers get answers 24/7 while you collect every inquiry. Turnkey packages from $149/month.",
-    link: "/web-solutions",
-  },
-];
-
-function Services() {
+function ServicesGrid() {
   return (
-    <section id="services" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What We <span className="text-[var(--cyber-blue)]">Build</span>
+    <section id="services" className="relative px-6 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14 max-w-3xl">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+            What We Build
+          </p>
+          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+            AI systems that answer, route, book, follow up, and execute.
           </h2>
-          <div className="gradient-line max-w-xs mx-auto" />
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => {
-            const inner = (
-              <>
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-white">
-                  {s.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
-                {s.link && (
-                  <div className="mt-4 text-[var(--cyber-blue)] text-sm font-semibold">
-                    Learn More →
-                  </div>
-                )}
-              </>
-            );
-            return s.link ? (
-              <Link
-                key={s.title}
-                href={s.link}
-                className="service-card bg-[var(--cyber-gray)] rounded-lg p-6 block hover:border-[var(--cyber-blue)]/50 transition-all"
-              >
-                {inner}
-              </Link>
-            ) : (
-              <div
-                key={s.title}
-                className="service-card bg-[var(--cyber-gray)] rounded-lg p-6"
-              >
-                {inner}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function HowWeWork() {
-  return (
-    <section id="how-we-work" className="py-24 px-6 bg-[var(--cyber-dark)]">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          How We <span className="text-[var(--cyber-blue)]">Work</span>
-        </h2>
-        <div className="gradient-line max-w-xs mx-auto mb-12" />
-
-        <div className="border-glow rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)]">
-          <p className="text-2xl md:text-3xl font-bold text-white mb-6">
-            We build on <span className="text-[var(--cyber-blue)]">YOUR</span>{" "}
-            accounts.
-            <br />
-            You own <span className="text-[var(--cyber-blue)]">everything</span>.
-          </p>
-          <p className="text-gray-400 text-lg leading-relaxed mb-8">
-            No vendor lock-in. No proprietary platforms you can&apos;t leave.
-            Every agent, every API key, every line of code lives in your
-            infrastructure. If we part ways, your systems keep running.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 text-left">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                desc: "We map your workflows and identify where AI agents create the most leverage.",
-              },
-              {
-                step: "02",
-                title: "Build & Deploy",
-                desc: "Rapid development on your accounts. Working prototypes in days, not months.",
-              },
-              {
-                step: "03",
-                title: "Optimize & Scale",
-                desc: "Monitor performance, refine behavior, and expand capabilities as you grow.",
-              },
-            ].map((item) => (
-              <div key={item.step}>
-                <div className="text-[var(--cyber-blue)] font-mono text-sm mb-2">
-                  {item.step}
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <SpotlightCard key={service.title} className={index === 0 ? "lg:col-span-2" : ""}>
+              <div className="mb-6 flex items-center justify-between gap-4">
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent-green)]">
+                  {service.eyebrow}
+                </p>
+                <div className="grid h-12 w-12 place-items-center rounded-2xl border border-[var(--accent-teal)]/30 bg-[var(--accent-teal)]/10 text-xs font-black tracking-[0.16em] text-[var(--accent-teal)] shadow-[0_0_24px_rgba(0,185,255,0.12)]">
+                  {service.icon}
                 </div>
-                <h4 className="text-white font-semibold mb-1">{item.title}</h4>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
               </div>
-            ))}
-          </div>
+              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{service.title}</h3>
+              <p className="text-sm leading-7 text-[var(--text-muted)]">{service.copy}</p>
+            </SpotlightCard>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function Portfolio() {
-  return (
-    <section id="portfolio" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Recent <span className="text-[var(--cyber-blue)]">Work</span>
-          </h2>
-          <div className="gradient-line max-w-xs mx-auto" />
-        </div>
+function Differentiator() {
+  const rows = [
+    ["Answers your phone 24/7", "No", "No", "Yes"],
+    ["Books appointments automatically", "No", "No", "Yes"],
+    ["You own everything", "No", "Yes", "Yes"],
+    ["Production-grade AI", "No", "No", "Yes"],
+    ["Live in days, not months", "No", "Yes", "Yes"],
+  ];
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              title: "AI Phone Agent",
-              desc: "Inbound call handling system with natural voice, appointment booking, and CRM integration. Handles 200+ calls/day.",
-              tag: "Voice AI",
-            },
-            {
-              title: "Multi-Agent Workflow",
-              desc: "Orchestrated system with research, drafting, and quality-check agents. Reduced manual review time by 85%.",
-              tag: "Agent Architecture",
-            },
-            {
-              title: "Customer Intake Assistant",
-              desc: "AI agent that handles customer-requested inquiries via chat and voice, collecting details and routing requests to the right team member in real time.",
-              tag: "Automation",
-            },
-          ].map((p) => (
-            <div
-              key={p.title}
-              className="service-card bg-[var(--cyber-gray)] rounded-lg overflow-hidden"
-            >
-              {/* Placeholder image area */}
-              <div className="h-48 bg-gradient-to-br from-[var(--cyber-gray)] to-black flex items-center justify-center border-b border-[var(--cyber-border)]">
-                <span className="text-gray-600 text-sm">Screenshot coming soon</span>
-              </div>
-              <div className="p-6">
-                <span className="text-xs text-[var(--cyber-blue)] font-mono uppercase tracking-wider">
-                  {p.tag}
-                </span>
-                <h3 className="text-lg font-semibold mt-2 mb-2">{p.title}</h3>
-                <p className="text-gray-500 text-sm">{p.desc}</p>
-              </div>
+  return (
+    <section className="relative px-6 py-24">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[var(--border)] bg-[var(--bg-card)]/70 p-6 md:p-10">
+        <div className="mb-10 text-center">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+            The Difference
+          </p>
+          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+            Other agencies build websites. CyberWolf builds AI employees.
+          </h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-white/10">
+          <div className="grid grid-cols-4 bg-white/[0.04] text-xs font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+            <div className="p-4">Capability</div>
+            <div className="p-4">Agency</div>
+            <div className="p-4">DIY</div>
+            <div className="p-4 text-[var(--accent-teal)]">CyberWolf</div>
+          </div>
+          {rows.map((row) => (
+            <div key={row[0]} className="grid grid-cols-4 border-t border-white/10 text-sm">
+              <div className="p-4 font-semibold text-[var(--text-primary)]">{row[0]}</div>
+              {row.slice(1).map((value, index) => (
+                <div
+                  key={`${row[0]}-${index}`}
+                  className={`p-4 ${value === "Yes" ? "text-[var(--accent-green)]" : "text-[var(--text-muted)]"}`}
+                >
+                  {value}
+                </div>
+              ))}
             </div>
           ))}
         </div>
@@ -295,81 +267,87 @@ function Portfolio() {
   );
 }
 
-function About() {
-  return (
-    <section id="about" className="py-24 px-6 bg-[var(--cyber-dark)]">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About the <span className="text-[var(--cyber-blue)]">Founder</span>
-          </h2>
-          <div className="gradient-line max-w-xs mx-auto" />
-        </div>
+function Process() {
+  const steps = [
+    {
+      step: "01",
+      title: "Discovery",
+      copy: "We map your workflows and find where AI creates the most leverage.",
+    },
+    {
+      step: "02",
+      title: "Build & Deploy",
+      copy: "Working prototypes in days. On your accounts. You own everything.",
+    },
+    {
+      step: "03",
+      title: "Optimize & Scale",
+      copy: "Monitor, refine, and expand. Your AI gets sharper over time.",
+    },
+  ];
 
-        <div className="border-glow rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)] text-center">
-          {/* Wolf logo avatar */}
-          <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-            <Image src="/cody-cyberwolf-logo.jpg" alt="CyberWolf" width={1254} height={1254} className="rounded-sm drop-shadow-[0_0_15px_rgba(0,163,255,0.3)]" />
-          </div>
-          <h3 className="text-2xl font-bold mb-2">Greg Schwartz</h3>
-          <p className="text-[var(--cyber-blue)] text-sm font-mono mb-6">
-            Founder & AI Engineer
+  return (
+    <section className="relative overflow-hidden px-6 py-24">
+      <AnimatedGrid />
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
+            How We Work
           </p>
-          <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            20+ years of enterprise sales and business development, now building
-            production AI systems daily. ODSC AI Engineer Certified. I don&apos;t
-            just talk about AI — I deploy agents that handle real calls, real
-            customers, and real revenue. Every system
-            I build runs in production, not in a demo.
-          </p>
+          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+            Built on your accounts. Owned by you.
+          </h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {steps.map((step) => (
+            <SpotlightCard key={step.step}>
+              <div className="mb-6 text-5xl font-black text-[var(--accent-teal)]/30">{step.step}</div>
+              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{step.title}</h3>
+              <p className="text-sm leading-7 text-[var(--text-muted)]">{step.copy}</p>
+            </SpotlightCard>
+          ))}
+        </div>
+        <div className="mt-10 rounded-full border border-[var(--accent-teal)]/30 bg-[var(--accent-teal)]/10 px-6 py-4 text-center text-sm font-black uppercase tracking-[0.22em] text-[var(--accent-teal)] shadow-[0_0_36px_rgba(0,185,255,0.12)]">
+          We build on your accounts. You own everything. No vendor lock-in.
         </div>
       </div>
     </section>
   );
 }
 
-function Contact() {
+function VerticalCards() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Let&apos;s <span className="text-[var(--cyber-blue)]">Build</span>
-        </h2>
-        <div className="gradient-line max-w-xs mx-auto mb-8" />
-        <p className="text-gray-400 text-lg mb-10">
-          Ready to deploy AI agents that actually work? Let&apos;s talk.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {[
-            {
-              label: "Email",
-              value: "gregs@cyberwolfaisystems.com",
-              href: "mailto:gregs@cyberwolfaisystems.com",
-            },
-            {
-              label: "Upwork",
-              value: "View Profile →",
-              href: "https://www.upwork.com/freelancers/~017f642b6dca185e6b",
-            },
-            {
-              label: "LinkedIn",
-              value: "Connect →",
-              href: "https://www.linkedin.com/in/placeholder",
-            },
-          ].map((c) => (
-            <a
-              key={c.label}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="service-card bg-[var(--cyber-gray)] rounded-lg p-6 block text-center"
+    <section id="verticals" className="px-6 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+              Industry Systems
+            </p>
+            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+              Five verticals. One operating principle: never miss the call.
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-7 text-[var(--text-muted)]">
+            Each page is tailored around a real workflow, not generic AI theater.
+          </p>
+        </div>
+        <div className="group/grid grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+          {verticals.map((vertical) => (
+            <Link
+              key={vertical.href}
+              href={vertical.href}
+              className="group min-h-[260px] rounded-[2rem] border border-[var(--border)] bg-[radial-gradient(circle_at_top,rgba(0,185,255,0.16),rgba(13,17,23,0.82)_44%,rgba(5,7,11,0.95))] p-5 transition duration-300 group-hover/grid:opacity-55 hover:-translate-y-2 hover:border-[var(--accent-teal)] hover:opacity-100 hover:shadow-[0_0_45px_rgba(0,185,255,0.12)]"
             >
-              <div className="text-xs text-[var(--cyber-blue)] font-mono uppercase tracking-wider mb-2">
-                {c.label}
-              </div>
-              <div className="text-white text-sm">{c.value}</div>
-            </a>
+              <p className="mb-16 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent-green)]">
+                {vertical.title}
+              </p>
+              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{vertical.product}</h3>
+              <p className="mb-5 text-sm leading-6 text-[var(--text-muted)]">{vertical.copy}</p>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-teal)]">
+                Learn More -&gt;
+              </span>
+            </Link>
           ))}
         </div>
       </div>
@@ -377,40 +355,92 @@ function Contact() {
   );
 }
 
-function Footer() {
+function SocialProof() {
   return (
-    <footer className="border-t border-[var(--cyber-border)] py-8 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+    <section id="proof" className="px-6 py-24">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
-          © {new Date().getFullYear()} CyberWolf AI Systems. All rights reserved.
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+            Proof Of Work
+          </p>
+          <h2 className="mb-6 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+            Shipped systems, not slide decks.
+          </h2>
+          <div className="space-y-4">
+            {proofItems.map((item) => (
+              <div key={item} className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-sm text-[var(--text-muted)]">
+                <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[var(--accent-green)] shadow-[0_0_14px_rgba(70,235,159,0.65)]" />
+                {item}
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] bg-black/35 py-4">
+            <motion.div
+              className="flex w-max gap-3 px-4"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            >
+              {[...proofBadges, ...proofBadges].map((badge, index) => (
+                <span
+                  key={`${badge}-${index}`}
+                  className="rounded-full border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-teal)]"
+                >
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
+          </div>
         </div>
-        <div className="flex gap-6">
-          <Link href="/privacy" className="hover:text-[var(--cyber-blue)] transition-colors">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="hover:text-[var(--cyber-blue)] transition-colors">
-            Terms
-          </Link>
-          <Link href="/contact" className="hover:text-[var(--cyber-blue)] transition-colors">
-            Contact
-          </Link>
+        <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--bg-card)]/80 p-5">
+          <div className="grid min-h-[320px] place-items-center rounded-[1.4rem] border border-dashed border-[var(--border)] bg-black/45 p-8 text-center">
+            <div>
+              <p className="mb-3 text-xl font-black text-[var(--text-primary)]">DineLine V2 video embed</p>
+              <p className="text-sm leading-7 text-[var(--text-muted)]">
+                Placeholder for Wolf&apos;s demo video. This section is ready for the final embed URL.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
+  );
+}
+
+function VoiceDemo() {
+  return (
+    <section id="voice-demo" className="relative overflow-hidden px-6 py-24">
+      <BackgroundGradientAnimation />
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
+          Live Product Demo
+        </p>
+        <h2 className="mb-5 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          Don&apos;t take our word for it. Talk to our AI right now.
+        </h2>
+        <p className="mx-auto mb-10 max-w-2xl text-sm leading-7 text-[var(--text-muted)]">
+          The voice widget is the product demonstrating itself. Ask it what CyberWolf builds,
+          where voice AI makes sense, or how an AI employee could help your business.
+        </p>
+        <VapiWidgetPlaceholder />
+      </div>
+    </section>
   );
 }
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Navbar />
       <Hero />
-      <Services />
-      <HowWeWork />
-      <Portfolio />
-      <About />
-      <Contact />
-      <Footer />
+      <ServicesGrid />
+      <Differentiator />
+      <Process />
+      <VerticalCards />
+      <SocialProof />
+      <VoiceDemo />
+      <CalendlySection />
+      <SiteFooter />
+      <MobileStickyActions />
     </main>
   );
 }
