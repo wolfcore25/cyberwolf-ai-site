@@ -358,47 +358,67 @@ function VerticalCards() {
 function SocialProof() {
   return (
     <section id="proof" className="px-6 py-24">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-        <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
-            Proof Of Work
-          </p>
-          <h2 className="mb-6 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
-            Shipped systems, not slide decks.
-          </h2>
-          <div className="space-y-4">
-            {proofItems.map((item) => (
-              <div key={item} className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-sm text-[var(--text-muted)]">
-                <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[var(--accent-green)] shadow-[0_0_14px_rgba(70,235,159,0.65)]" />
-                {item}
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] bg-black/35 py-4">
-            <motion.div
-              className="flex w-max gap-3 px-4"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            >
-              {[...proofBadges, ...proofBadges].map((badge, index) => (
-                <span
-                  key={`${badge}-${index}`}
-                  className="rounded-full border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-teal)]"
-                >
-                  {badge}
-                </span>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-        <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--bg-card)]/80 p-5">
-          <div className="grid min-h-[320px] place-items-center rounded-[1.4rem] border border-dashed border-[var(--border)] bg-black/45 p-8 text-center">
-            <div>
-              <p className="mb-3 text-xl font-black text-[var(--text-primary)]">DineLine V2 video embed</p>
-              <p className="text-sm leading-7 text-[var(--text-muted)]">
-                Placeholder for Wolf&apos;s demo video. This section is ready for the final embed URL.
-              </p>
+      <div className="mx-auto max-w-5xl">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+          Proof Of Work
+        </p>
+        <h2 className="mb-6 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          Shipped systems, not slide decks.
+        </h2>
+        <div className="space-y-4">
+          {proofItems.map((item) => (
+            <div key={item} className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-sm text-[var(--text-muted)]">
+              <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[var(--accent-green)] shadow-[0_0_14px_rgba(70,235,159,0.65)]" />
+              {item}
             </div>
+          ))}
+        </div>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] bg-black/35 py-4">
+          <motion.div
+            className="flex w-max gap-3 px-4"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          >
+            {[...proofBadges, ...proofBadges].map((badge, index) => (
+              <span
+                key={`${badge}-${index}`}
+                className="rounded-full border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent-teal)]"
+              >
+                {badge}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutFounder() {
+  return (
+    <section id="about" className="px-6 py-20">
+      <div className="mx-auto max-w-5xl rounded-[2rem] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(0,185,255,0.12),rgba(5,7,11,0.92)_42%,rgba(70,235,159,0.09))] p-6 shadow-[0_0_70px_rgba(0,185,255,0.08)] md:p-10">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
+          About CyberWolf
+        </p>
+        <h2 className="mb-6 max-w-3xl text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          Built by an Enterprise Sales Veteran Who Actually Ships AI.
+        </h2>
+        <div className="grid gap-6 md:grid-cols-[1fr_0.35fr] md:items-end">
+          <p className="text-base leading-8 text-[var(--text-muted)] md:text-lg">
+            CyberWolf AI Systems was founded by Greg Schwartz, a 20-year enterprise sales and
+            business development leader who builds the AI systems he deploys. ODSC AI Engineering
+            Accelerator graduate (96% average). Builder of DineLine V2, a live voice AI restaurant
+            booking system. Greg sits in both seats: he closes enterprise deals and opens the
+            terminal. That&apos;s the CyberWolf difference.
+          </p>
+          <div className="rounded-[1.5rem] border border-[var(--accent-teal)]/25 bg-black/35 p-5">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent-teal)]">
+              Sales + Systems
+            </p>
+            <p className="mt-4 text-sm leading-7 text-[var(--text-muted)]">
+              Strategy, implementation, testing, and deployment under one roof.
+            </p>
           </div>
         </div>
       </div>
@@ -437,6 +457,7 @@ export default function Home() {
       <Process />
       <VerticalCards />
       <SocialProof />
+      <AboutFounder />
       <VoiceDemo />
       <CalendlySection />
       <SiteFooter />
