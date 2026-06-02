@@ -71,30 +71,35 @@ const verticals = [
     title: "Restaurants",
     product: "DineLine",
     copy: "AI that books reservations by phone and keeps the front desk clear during the rush.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/law-firms",
     title: "Law Firms",
     product: "Legal Intake",
     copy: "Qualify leads, collect case details, and schedule consultations after hours.",
+    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/hvac",
     title: "HVAC / Plumbing",
     product: "Emergency Call AI",
     copy: "Separate true emergencies from next-day jobs without missing a revenue call.",
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/medical",
     title: "Medical / Dental",
     product: "Patient Scheduling",
     copy: "Scheduling, rescheduling, and cancellation support without phone trees.",
+    image: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/contractors",
     title: "Contractors",
     product: "Lead Conversion",
     copy: "Turn visitors into booked estimates before competitors call them back.",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -338,16 +343,28 @@ function VerticalCards() {
             <Link
               key={vertical.href}
               href={vertical.href}
-              className="group min-h-[260px] rounded-[2rem] border border-[var(--border)] bg-[radial-gradient(circle_at_top,rgba(0,185,255,0.16),rgba(13,17,23,0.82)_44%,rgba(5,7,11,0.95))] p-5 transition duration-300 group-hover/grid:opacity-55 hover:-translate-y-2 hover:border-[var(--accent-teal)] hover:opacity-100 hover:shadow-[0_0_45px_rgba(0,185,255,0.12)]"
+              className="group min-h-[340px] overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[radial-gradient(circle_at_top,rgba(0,185,255,0.16),rgba(13,17,23,0.82)_44%,rgba(5,7,11,0.95))] transition duration-300 group-hover/grid:opacity-55 hover:-translate-y-2 hover:border-[var(--accent-teal)] hover:opacity-100 hover:shadow-[0_0_45px_rgba(0,185,255,0.12)]"
             >
-              <p className="mb-16 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent-green)]">
-                {vertical.title}
-              </p>
-              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{vertical.product}</h3>
-              <p className="mb-5 text-sm leading-6 text-[var(--text-muted)]">{vertical.copy}</p>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-teal)]">
-                Learn More -&gt;
-              </span>
+              <div className="relative h-36 overflow-hidden border-b border-[var(--accent-teal)]/20">
+                <Image
+                  src={vertical.image}
+                  alt={`${vertical.title} AI workflow photo`}
+                  fill
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover opacity-80 transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.05),rgba(5,7,11,0.72)),radial-gradient(circle_at_top_left,rgba(0,185,255,0.24),transparent_44%)]" />
+              </div>
+              <div className="p-5">
+                <p className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent-green)]">
+                  {vertical.title}
+                </p>
+                <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{vertical.product}</h3>
+                <p className="mb-5 text-sm leading-6 text-[var(--text-muted)]">{vertical.copy}</p>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-teal)]">
+                  Learn More -&gt;
+                </span>
+              </div>
             </Link>
           ))}
         </div>

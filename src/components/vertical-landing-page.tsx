@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CalendlySection } from "@/components/calendly-section";
 import { MobileStickyActions } from "@/components/mobile-sticky-actions";
 import { SiteFooter } from "@/components/site-footer";
@@ -55,11 +56,13 @@ export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
             </div>
 
             <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-[var(--accent-teal)]/35 bg-black shadow-[0_0_70px_rgba(0,185,255,0.18)] md:min-h-[520px]">
-              <div
-                aria-label={page.heroImage.alt}
-                role="img"
-                className="absolute inset-0 scale-105 bg-cover bg-center opacity-75"
-                style={{ backgroundImage: `url(${page.heroImage.src})` }}
+              <Image
+                src={page.heroImage.src}
+                alt={page.heroImage.alt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="object-cover opacity-75"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.08),rgba(5,7,11,0.88)),radial-gradient(circle_at_20%_20%,rgba(0,185,255,0.26),transparent_34%),radial-gradient(circle_at_85%_75%,rgba(70,235,159,0.18),transparent_36%)]" />
               <div className="absolute inset-x-5 bottom-5 rounded-[1.35rem] border border-white/10 bg-black/55 p-5 backdrop-blur-xl">
