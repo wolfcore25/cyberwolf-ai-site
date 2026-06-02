@@ -100,7 +100,7 @@ const verticals = [
 
 const proofItems = [
   "DineLine V2: live AI restaurant booking system",
-  "ODSC AI Engineering Accelerator: 96% average",
+  "ODSC AI Engineering Accelerator graduate",
   "20+ years enterprise sales and business development",
   "Systems built around real calls, real customers, real revenue",
 ];
@@ -409,7 +409,7 @@ function AboutFounder() {
           <p className="text-base leading-8 text-[var(--text-muted)] md:text-lg">
             CyberWolf AI Systems was founded by Greg Schwartz, a 20-year enterprise sales and
             business development leader who builds the AI systems he deploys. ODSC AI Engineering
-            Accelerator graduate (96% average). Builder of DineLine V2, a live voice AI restaurant
+            Accelerator graduate. Builder of DineLine V2, a live voice AI restaurant
             booking system. Greg sits in both seats: he closes enterprise deals and opens the
             terminal. That&apos;s the CyberWolf difference.
           </p>
