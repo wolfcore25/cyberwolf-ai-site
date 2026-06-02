@@ -19,7 +19,7 @@ function Navbar() {
           <Link href="/#services" className="hover:text-[var(--cyber-blue)] transition-colors">Services</Link>
           <Link href="/#about" className="hover:text-[var(--cyber-blue)] transition-colors">About</Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded hover:bg-[var(--cyber-blue-dim)] transition-colors"
           >
             Get Started
@@ -42,7 +42,7 @@ function Navbar() {
           <Link href="/#services" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link href="/#about" className="text-gray-300 hover:text-[var(--cyber-blue)] transition-colors" onClick={() => setMenuOpen(false)}>About</Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="px-4 py-2 bg-[var(--cyber-blue)] text-white font-semibold rounded text-center hover:bg-[var(--cyber-blue-dim)] transition-colors"
             onClick={() => setMenuOpen(false)}
           >
@@ -201,7 +201,7 @@ export default function WebSolutions() {
                   ))}
                 </ul>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="block text-center px-6 py-3 bg-[var(--cyber-blue)] text-white font-bold rounded glow-blue hover:bg-[var(--cyber-blue-dim)] transition-all"
                 >
                   Get Started
@@ -243,7 +243,7 @@ export default function WebSolutions() {
             Stop missing customer inquiries because of a static website. Let AI work for you around the clock.
           </p>
           <Link
-            href="/#contact"
+            href="/contact"
             className="px-8 py-3 bg-[var(--cyber-blue)] text-white font-bold rounded glow-blue hover:bg-[var(--cyber-blue-dim)] transition-all inline-block"
           >
             Get Started →

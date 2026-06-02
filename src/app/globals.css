@@ -27,11 +27,21 @@ html {
   overflow-x: hidden;
 }
 
+section[id] {
+  scroll-margin-top: 92px;
+}
+
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
   max-width: 100%;
+}
+
+body,
+main,
+section {
+  min-width: 0;
 }
 
 ::selection {
@@ -105,7 +115,7 @@ body {
   }
 
   body {
-    padding-bottom: 76px;
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
   }
 
   main {

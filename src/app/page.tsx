@@ -147,7 +147,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 pt-32">
+    <section className="relative overflow-hidden px-6 pb-12 pt-28 md:pb-16 md:pt-32">
       <AuroraBackground />
       <BackgroundBeams />
       <AnimatedGrid />
@@ -169,21 +169,32 @@ function Hero() {
             width={760}
             height={760}
             priority
-            className="cyberwolf-logo-pulse mx-auto h-auto w-72 max-w-[78vw] brightness-125 contrast-125 drop-shadow-[0_0_42px_rgba(0,185,255,0.32)] md:w-[360px]"
+            className="cyberwolf-logo-pulse mx-auto h-auto w-52 max-w-[60vw] brightness-125 contrast-125 drop-shadow-[0_0_42px_rgba(0,185,255,0.32)] sm:w-64 md:w-[310px]"
           />
         </div>
 
-        <h1 className="w-full max-w-xs text-balance text-xl font-black leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-5xl sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.05em]">
+        <h1 className="w-full max-w-[22rem] text-balance text-3xl font-black leading-[1.04] tracking-[-0.025em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-5xl sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.05em]">
           Your AI employee answers the phone,{" "}
           <span className="cyber-gradient-text">books the appointment</span>, and never calls in sick.
         </h1>
 
-        <p className="mt-7 w-full max-w-xs text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
+        <p className="mt-7 w-full max-w-[22rem] text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
           Production AI agents that handle real calls, real customers, real revenue. Deployed on
           your accounts. Owned by you.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+        <div className="mt-8 grid w-full max-w-4xl gap-3 sm:grid-cols-3">
+          {["DineLine V2 Live", "20+ Years Enterprise Sales", "Production AI Systems Shipped"].map((proof) => (
+            <div
+              key={proof}
+              className="rounded-2xl border border-[var(--accent-teal)]/25 bg-black/35 px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.1em] text-[var(--accent-teal)] shadow-[0_0_28px_rgba(0,185,255,0.08)] sm:text-[11px] sm:tracking-[0.12em]"
+            >
+              {proof}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
           <MagneticButton href="#voice-demo">Talk to CyberWolf</MagneticButton>
           <MagneticButton href="#book" variant="secondary">
             Book a Free Consultation
@@ -196,7 +207,7 @@ function Hero() {
 
 function ServicesGrid() {
   return (
-    <section id="services" className="relative px-6 py-24">
+    <section id="services" className="relative px-6 py-16 md:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-14 max-w-3xl">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
@@ -465,6 +476,43 @@ function VoiceDemo() {
   );
 }
 
+function ContactBlock() {
+  return (
+    <section id="contact" className="px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-5xl rounded-[2rem] border border-[var(--accent-teal)]/30 bg-[radial-gradient(circle_at_top_left,rgba(0,185,255,0.18),rgba(13,17,23,0.88)_42%,rgba(5,7,11,0.96))] p-6 shadow-[0_0_70px_rgba(0,185,255,0.1)] md:p-10">
+        <div className="grid gap-8 md:grid-cols-[1fr_0.8fr] md:items-center">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
+              Start Here
+            </p>
+            <h2 className="mb-4 text-3xl font-black tracking-tight text-white md:text-5xl">
+              Ready to put an AI employee to work?
+            </h2>
+            <p className="text-sm leading-7 text-[var(--text-muted)] md:text-base">
+              Email CyberWolf directly, book a consultation, or talk to the homepage AI and hear
+              the product explain itself.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <a
+              href="mailto:gregs@cyberwolfaisystems.com"
+              className="block rounded-2xl border border-white/10 bg-black/35 px-5 py-4 text-sm font-bold text-white transition hover:border-[var(--accent-teal)] hover:text-[var(--accent-teal)]"
+            >
+              gregs@cyberwolfaisystems.com
+            </a>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <MagneticButton href="#book">Book Call</MagneticButton>
+              <MagneticButton href="#voice-demo" variant="secondary">
+                Talk to AI
+              </MagneticButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
@@ -477,6 +525,7 @@ export default function Home() {
       <SocialProof />
       <AboutFounder />
       <VoiceDemo />
+      <ContactBlock />
       <CalendlySection />
       <SiteFooter />
       <MobileStickyActions />
