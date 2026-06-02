@@ -453,12 +453,12 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Navbar />
       <Hero />
+      <AboutFounder />
       <ServicesGrid />
       <Differentiator />
       <Process />
       <VerticalCards />
       <SocialProof />
-      <AboutFounder />
       <VoiceDemo />
       <CalendlySection />
       <SiteFooter />
