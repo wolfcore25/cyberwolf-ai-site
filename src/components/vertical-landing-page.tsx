@@ -62,10 +62,10 @@ export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
                 fill
                 priority
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover opacity-75"
+                className="object-cover opacity-90"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.08),rgba(5,7,11,0.88)),radial-gradient(circle_at_20%_20%,rgba(0,185,255,0.26),transparent_34%),radial-gradient(circle_at_85%_75%,rgba(70,235,159,0.18),transparent_36%)]" />
-              <div className="absolute inset-x-5 bottom-5 rounded-[1.35rem] border border-white/10 bg-black/55 p-5 backdrop-blur-xl">
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,185,255,0.26),rgba(4,11,22,0.16)_36%,rgba(5,7,11,0.62)_100%),radial-gradient(circle_at_78%_18%,rgba(70,235,159,0.16),transparent_34%),linear-gradient(180deg,rgba(5,7,11,0.02),rgba(5,7,11,0.7))]" />
+              <div className="absolute inset-x-5 bottom-5 rounded-[1.35rem] border border-[var(--accent-teal)]/20 bg-[#04111d]/58 p-5 backdrop-blur-xl">
                 <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-[var(--accent-teal)]">
                   {page.industry} AI Deployed
                 </p>
