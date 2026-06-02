@@ -34,22 +34,42 @@ export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
             </a>
           </nav>
 
-          <div className="max-w-5xl">
-            <p className="mb-5 inline-flex max-w-xs rounded-2xl border border-[var(--border)] bg-white/[0.04] px-3 py-2 text-[8px] font-bold uppercase leading-5 tracking-[0.14em] text-[var(--accent-green)] sm:max-w-sm sm:rounded-full sm:text-xs sm:tracking-[0.28em]">
-              {page.product} / {page.industry}
-            </p>
-            <h1 className="max-w-xs text-balance text-xl font-black leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-none sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.045em]">
-              {page.headline}
-            </h1>
-            <p className="mt-7 max-w-xs text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
-              CyberWolf builds practical voice AI agents that answer real calls, qualify real customers,
-              and keep working when the office is closed.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <MagneticButton href="#demo">{page.primaryCta}</MagneticButton>
-              <MagneticButton href="#book" variant="secondary">
-                Book a free consultation
-              </MagneticButton>
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_0.78fr] lg:items-center">
+            <div>
+              <p className="mb-5 inline-flex max-w-xs rounded-2xl border border-[var(--border)] bg-white/[0.04] px-3 py-2 text-[8px] font-bold uppercase leading-5 tracking-[0.14em] text-[var(--accent-green)] sm:max-w-sm sm:rounded-full sm:text-xs sm:tracking-[0.28em]">
+                {page.product} / {page.industry}
+              </p>
+              <h1 className="max-w-xs text-balance text-xl font-black leading-[1.08] tracking-[-0.015em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-none sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.045em]">
+                {page.headline}
+              </h1>
+              <p className="mt-7 max-w-xs text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
+                CyberWolf builds practical voice AI agents that answer real calls, qualify real customers,
+                and keep working when the office is closed.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <MagneticButton href="#demo">{page.primaryCta}</MagneticButton>
+                <MagneticButton href="#book" variant="secondary">
+                  Book a free consultation
+                </MagneticButton>
+              </div>
+            </div>
+
+            <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-[var(--accent-teal)]/35 bg-black shadow-[0_0_70px_rgba(0,185,255,0.18)] md:min-h-[520px]">
+              <div
+                aria-label={page.heroImage.alt}
+                role="img"
+                className="absolute inset-0 scale-105 bg-cover bg-center opacity-75"
+                style={{ backgroundImage: `url(${page.heroImage.src})` }}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.08),rgba(5,7,11,0.88)),radial-gradient(circle_at_20%_20%,rgba(0,185,255,0.26),transparent_34%),radial-gradient(circle_at_85%_75%,rgba(70,235,159,0.18),transparent_36%)]" />
+              <div className="absolute inset-x-5 bottom-5 rounded-[1.35rem] border border-white/10 bg-black/55 p-5 backdrop-blur-xl">
+                <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-[var(--accent-teal)]">
+                  {page.industry} AI Deployed
+                </p>
+                <p className="mt-3 text-lg font-black leading-7 text-white">
+                  Real calls. Real workflows. Built for the front line.
+                </p>
+              </div>
             </div>
           </div>
         </div>
