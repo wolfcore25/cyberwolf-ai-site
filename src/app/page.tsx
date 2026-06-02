@@ -99,7 +99,7 @@ const verticals = [
     title: "Contractors",
     product: "Lead Conversion",
     copy: "Turn visitors into booked estimates before competitors call them back.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1646119955125-7ef8819c813a?auto=format&fit=crop&w=900&q=80",
   },
 ];
 

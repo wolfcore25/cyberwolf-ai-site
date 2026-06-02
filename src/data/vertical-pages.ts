@@ -106,8 +106,8 @@ export const verticalPages: Record<string, VerticalPage> = {
       "Our AI engages every website visitor, qualifies the lead, collects project details, and books an estimate - by phone or chat. It follows up automatically. The first contractor to respond wins 78% of jobs. Our AI makes sure that's you.",
     primaryCta: "See it in action",
     heroImage: {
-      src: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=85",
-      alt: "Contractor and construction crew working on a renovation project",
+      src: "https://images.unsplash.com/photo-1646119955125-7ef8819c813a?auto=format&fit=crop&w=1800&q=85",
+      alt: "Contractor measuring wood for a residential renovation project",
     },
   },
 };
