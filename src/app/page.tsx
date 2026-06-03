@@ -205,6 +205,112 @@ function Hero() {
   );
 }
 
+function MissionManifesto() {
+  const missions = [
+    {
+      industry: "Restaurants",
+      mission: "Never miss a reservation.",
+      copy: "Never lose a customer to a busy signal. At 7 PM on a Friday when your host stand is slammed and three lines are ringing, your AI employee answers every call. Takes the reservation, confirms availability, handles special requests, books the table. No hold music. No voicemail. No lost covers. Your human staff stays with the guests. Your AI employee handles the phones.",
+    },
+    {
+      industry: "Law Firms",
+      mission: "Get the case.",
+      copy: "Don't let a million dollar lead hang up without a consultation booked. A human receptionist is thinking about five things at once. Your AI employee is thinking about one thing: converting that call into a signed client.",
+    },
+    {
+      industry: "HVAC Companies",
+      mission: "Capture the emergency.",
+      copy: "At 11 PM when your staff is asleep, your AI employee answers, qualifies the urgency, collects the details, and routes the call. That $2,000 emergency job doesn't go to your competitor.",
+    },
+    {
+      industry: "Contractors",
+      mission: "Book the estimate.",
+      copy: "The first contractor to respond wins 78% of jobs. Your AI employee responds in seconds. Every time. Every call. Every lead.",
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden px-6 py-20 md:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(0,185,255,0.12),transparent_38%),radial-gradient(circle_at_85%_65%,rgba(70,235,159,0.08),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <AnimatedGrid />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[var(--accent-teal)]">
+            The CyberWolf Standard
+          </p>
+          <h2 className="text-balance text-4xl font-black leading-[1.03] tracking-[-0.04em] text-white md:text-6xl">
+            Your AI Employee Has{" "}
+            <span className="text-[var(--accent-green)] drop-shadow-[0_0_22px_rgba(70,235,159,0.3)]">
+              One Mission.
+            </span>{" "}
+            And It Never Stops.
+          </h2>
+          <p className="mx-auto mt-8 max-w-4xl text-base leading-8 text-[var(--text-muted)] md:text-lg md:leading-9">
+            CyberWolf AI employees don&apos;t take lunch breaks. They don&apos;t call in sick.
+            They&apos;re not thinking about date night or checking their phone. They don&apos;t
+            get tired at 2 AM. They don&apos;t give up when someone says no.
+          </p>
+        </div>
+
+        <div className="mx-auto my-12 max-w-4xl rounded-[2rem] border border-[var(--accent-teal)]/30 bg-black/45 px-6 py-8 text-center shadow-[0_0_60px_rgba(0,185,255,0.09)] backdrop-blur-sm md:px-12 md:py-10">
+          <p className="text-xl font-black leading-8 text-white md:text-3xl md:leading-10">
+            They have{" "}
+            <span className="text-[var(--accent-teal)]">one mission.</span> It&apos;s binary.
+            It&apos;s encoded. And they execute it{" "}
+            <span className="text-[var(--accent-green)]">relentlessly.</span>
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {missions.map((item, index) => (
+            <motion.article
+              key={item.industry}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[var(--bg-card)]/85 p-6 shadow-[0_0_35px_rgba(0,185,255,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[var(--accent-teal)]/35 hover:shadow-[0_0_45px_rgba(0,185,255,0.1)] md:p-8"
+            >
+              <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[var(--accent-teal)]/10 blur-3xl transition group-hover:bg-[var(--accent-green)]/10" />
+              <p className="relative mb-5 text-xs font-black uppercase tracking-[0.32em] text-[var(--accent-teal)]">
+                For {item.industry}
+              </p>
+              <h3 className="relative mb-4 text-2xl font-black tracking-tight text-white md:text-3xl">
+                That mission is:{" "}
+                <span className="text-[var(--accent-green)]">{item.mission}</span>
+              </h3>
+              <p className="relative text-sm leading-7 text-[var(--text-muted)] md:text-base md:leading-8">
+                {item.copy}{" "}
+                {item.industry === "Restaurants" && (
+                  <span className="font-black text-[var(--accent-green)]">Relentlessly.</span>
+                )}
+              </p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-14 max-w-5xl text-center">
+          <p className="text-balance text-2xl font-black leading-tight text-white md:text-4xl">
+            No breaks. No distractions. No excuses.{" "}
+            <span className="text-[var(--accent-teal)]">One mission.</span>{" "}
+            Executed{" "}
+            <span className="text-[var(--accent-green)]">relentlessly.</span>
+          </p>
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <MagneticButton href="#voice-demo">Talk to a CyberWolf AI Employee Now</MagneticButton>
+            <MagneticButton href="#book" variant="secondary">
+              Book a Free Consultation
+            </MagneticButton>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ServicesGrid() {
   return (
     <section id="services" className="relative px-6 py-16 md:py-20">
@@ -518,6 +624,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Navbar />
       <Hero />
+      <MissionManifesto />
       <ServicesGrid />
       <Differentiator />
       <Process />
