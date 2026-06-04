@@ -19,6 +19,7 @@ export function SiteFooter() {
             ["Book", "#book"],
             ["Contact", "/contact"],
             ["Privacy", "/privacy"],
+            ["Terms", "/terms"],
           ].map(([label, href]) =>
             href.startsWith("#") ? (
               <a
