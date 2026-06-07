@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { metadataBase } from "@/lib/seo";
+import { createBusinessSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const businessSchema = createBusinessSchema();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -25,6 +27,9 @@ export const metadata: Metadata = {
     "AI employees",
     "AI consulting",
   ],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -72,6 +77,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-black text-white antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
         {children}
       </body>
     </html>

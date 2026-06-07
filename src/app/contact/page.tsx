@@ -1,9 +1,5 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Contact",
-};
-
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[var(--cyber-darker)]">

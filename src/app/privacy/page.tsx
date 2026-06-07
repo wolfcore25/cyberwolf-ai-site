@@ -1,9 +1,5 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Privacy Policy",
-};
-
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-[var(--cyber-darker)]">
