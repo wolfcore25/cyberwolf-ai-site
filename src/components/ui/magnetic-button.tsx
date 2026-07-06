@@ -21,7 +21,7 @@ export function MagneticButton({
   const springY = useSpring(y, { stiffness: 180, damping: 18 });
 
   const base =
-    "group relative inline-flex min-w-0 items-center justify-center overflow-hidden rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.08em] transition sm:px-7 sm:text-sm sm:tracking-[0.18em]";
+    "group relative inline-flex min-w-0 max-w-full items-center justify-center overflow-hidden rounded-full px-5 py-3 text-center text-xs font-bold uppercase tracking-[0.08em] transition sm:whitespace-nowrap sm:px-7 sm:text-sm sm:tracking-[0.16em]";
   const variants = {
     primary:
       "bg-[var(--accent-teal)] text-black shadow-[0_0_35px_rgba(0,185,255,0.28)] hover:bg-[var(--accent-green)]",

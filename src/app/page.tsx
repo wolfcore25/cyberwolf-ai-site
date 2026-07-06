@@ -16,6 +16,8 @@ import { AgentMark } from "@/components/agent-mark";
 import { CalendlySection } from "@/components/calendly-section";
 import { MobileStickyActions } from "@/components/mobile-sticky-actions";
 import { SiteFooter } from "@/components/site-footer";
+import { LiveCallDemo } from "@/components/live-call-demo";
+import { MissedCallMath } from "@/components/missed-call-math";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -71,35 +73,45 @@ const verticals = [
     title: "Restaurants",
     product: "DineLine",
     copy: "AI that books reservations by phone and keeps the front desk clear during the rush.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+    callLine: "“Table for four at 7:45 — confirmed.”",
+    image:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/law-firms",
     title: "Law Firms",
     product: "Legal Intake",
     copy: "Qualify leads, collect case details, and schedule consultations after hours.",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
+    callLine: "“Consultation booked for Tuesday at 10.”",
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/hvac",
     title: "HVAC / Plumbing",
     product: "Emergency Call AI",
     copy: "Separate true emergencies from next-day jobs without missing a revenue call.",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80",
+    callLine: "“Tech dispatched — 40 minutes out.”",
+    image:
+      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/medical",
     title: "Medical / Dental",
     product: "Patient Scheduling",
     copy: "Scheduling, rescheduling, and cancellation support without phone trees.",
-    image: "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=900&q=80",
+    callLine: "“You're rescheduled for Thursday at 2.”",
+    image:
+      "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=900&q=80",
   },
   {
     href: "/contractors",
     title: "Contractors",
     product: "Lead Conversion",
     copy: "Turn visitors into booked estimates before competitors call them back.",
-    image: "https://images.unsplash.com/photo-1646119955125-7ef8819c813a?auto=format&fit=crop&w=900&q=80",
+    callLine: "“Estimate booked for Saturday morning.”",
+    image:
+      "https://images.unsplash.com/photo-1646119955125-7ef8819c813a?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -147,59 +159,84 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-12 pt-28 md:pb-16 md:pt-32">
+    <section className="relative overflow-hidden px-6 pb-16 pt-28 md:pb-24 md:pt-36">
       <AuroraBackground />
       <BackgroundBeams />
       <AnimatedGrid />
-      <div className="pointer-events-none absolute inset-x-0 top-16 z-[1] mx-auto h-[42rem] max-w-5xl rounded-full bg-[radial-gradient(circle,rgba(0,185,255,0.18)_0%,rgba(70,235,159,0.08)_36%,transparent_70%)] blur-2xl" />
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center text-center">
+      <div className="pointer-events-none absolute inset-x-0 top-10 z-[1] mx-auto h-[40rem] max-w-5xl rounded-full bg-[radial-gradient(circle,rgba(0,185,255,0.15)_0%,rgba(70,235,159,0.06)_38%,transparent_70%)] blur-2xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-green)] sm:text-xs sm:tracking-[0.26em]"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-green)] shadow-[0_0_12px_rgba(70,235,159,0.9)]" />
+            Not chatbots. Not widgets. AI employees.
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.08 }}
+            className="font-display max-w-[24rem] text-balance text-4xl font-bold leading-[1.04] text-white sm:max-w-2xl sm:text-5xl md:text-6xl md:leading-[1.0] xl:text-7xl"
+          >
+            Your AI employee answers the phone,{" "}
+            <span className="cyber-gradient-text">books the appointment</span>, and never calls
+            in sick.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.18 }}
+            className="mt-7 max-w-xl text-sm leading-7 text-[var(--text-muted)] sm:text-base md:text-lg md:leading-8"
+          >
+            Production voice AI that makes and takes real phone calls — deployed on your
+            accounts, wired into your calendar, owned by you. Watch one work →
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.28 }}
+            className="mt-9 flex flex-col items-center gap-4 sm:flex-row"
+          >
+            <MagneticButton href="#voice-demo">Talk to CyberWolf</MagneticButton>
+            <MagneticButton href="#book" variant="secondary">
+              Book the Build Call
+            </MagneticButton>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.42 }}
+            className="mt-10 grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-3"
+          >
+            {["DineLine V2 Live", "20+ Years Enterprise Sales", "You Own Everything"].map(
+              (proof) => (
+                <div
+                  key={proof}
+                  className="rounded-xl border border-[var(--accent-teal)]/20 bg-black/35 px-3 py-2.5 text-center text-[10px] font-bold uppercase tracking-[0.12em] text-[var(--accent-teal)]"
+                >
+                  {proof}
+                </div>
+              )
+            )}
+          </motion.div>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75 }}
-          className="mb-7 w-full max-w-xs rounded-2xl border border-[var(--border)] bg-white/[0.04] px-3 py-2 text-center text-[8px] font-bold uppercase leading-5 tracking-[0.14em] text-[var(--accent-green)] sm:max-w-sm sm:rounded-full sm:text-xs sm:tracking-[0.28em]"
+          initial={{ opacity: 0, y: 32, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.3 }}
+          className="flex justify-center lg:justify-end"
         >
-          Other agencies build websites. CyberWolf builds AI employees.
+          <LiveCallDemo />
         </motion.div>
-
-        <div className="mb-8">
-          <Image
-            src="/logo-main.png"
-            alt="CyberWolf AI Systems"
-            width={760}
-            height={760}
-            priority
-            className="cyberwolf-logo-pulse mx-auto h-auto w-52 max-w-[60vw] brightness-125 contrast-125 drop-shadow-[0_0_42px_rgba(0,185,255,0.32)] sm:w-64 md:w-[310px]"
-          />
-        </div>
-
-        <h1 className="w-full max-w-[22rem] text-balance text-3xl font-black leading-[1.04] tracking-[-0.025em] text-white drop-shadow-[0_0_34px_rgba(0,185,255,0.28)] sm:max-w-5xl sm:text-4xl md:text-7xl md:leading-[0.95] md:tracking-[-0.05em]">
-          Your AI employee answers the phone,{" "}
-          <span className="cyber-gradient-text">books the appointment</span>, and never calls in sick.
-        </h1>
-
-        <p className="mt-7 w-full max-w-[22rem] text-sm leading-7 text-[var(--text-muted)] sm:max-w-3xl sm:text-base md:text-xl">
-          Production AI agents that handle real calls, real customers, real revenue. Deployed on
-          your accounts. Owned by you.
-        </p>
-
-        <div className="mt-8 grid w-full max-w-4xl gap-3 sm:grid-cols-3">
-          {["DineLine V2 Live", "20+ Years Enterprise Sales", "Production AI Systems Shipped"].map((proof) => (
-            <div
-              key={proof}
-              className="rounded-2xl border border-[var(--accent-teal)]/25 bg-black/35 px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.1em] text-[var(--accent-teal)] shadow-[0_0_28px_rgba(0,185,255,0.08)] sm:text-[11px] sm:tracking-[0.12em]"
-            >
-              {proof}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
-          <MagneticButton href="#voice-demo">Talk to CyberWolf</MagneticButton>
-          <MagneticButton href="#book" variant="secondary">
-            Book a Free Consultation
-          </MagneticButton>
-        </div>
       </div>
     </section>
   );
@@ -241,12 +278,12 @@ function MissionManifesto() {
           <p className="mb-4 text-xs font-black uppercase tracking-[0.35em] text-[var(--accent-teal)]">
             The CyberWolf Standard
           </p>
-          <h2 className="text-balance text-4xl font-black leading-[1.03] tracking-[-0.04em] text-white md:text-6xl">
-            Your AI Employee Has{" "}
+          <h2 className="font-display text-balance text-4xl font-bold leading-[1.03] text-white md:text-6xl">
+            Your AI employee has{" "}
             <span className="text-[var(--accent-green)] drop-shadow-[0_0_22px_rgba(70,235,159,0.3)]">
-              One Mission.
+              one mission.
             </span>{" "}
-            And It Never Stops.
+            And it never stops.
           </h2>
           <p className="mx-auto mt-8 max-w-4xl text-base leading-8 text-[var(--text-muted)] md:text-lg md:leading-9">
             CyberWolf AI employees don&apos;t take lunch breaks. They don&apos;t call in sick.
@@ -256,10 +293,9 @@ function MissionManifesto() {
         </div>
 
         <div className="mx-auto my-12 max-w-4xl rounded-[2rem] border border-[var(--accent-teal)]/30 bg-black/45 px-6 py-8 text-center shadow-[0_0_60px_rgba(0,185,255,0.09)] backdrop-blur-sm md:px-12 md:py-10">
-          <p className="text-xl font-black leading-8 text-white md:text-3xl md:leading-10">
-            They have{" "}
-            <span className="text-[var(--accent-teal)]">one mission.</span> It&apos;s binary.
-            It&apos;s encoded. And they execute it{" "}
+          <p className="font-display text-xl font-bold leading-8 text-white md:text-3xl md:leading-10">
+            They have <span className="text-[var(--accent-teal)]">one mission.</span> It&apos;s
+            binary. It&apos;s encoded. And they execute it{" "}
             <span className="text-[var(--accent-green)]">relentlessly.</span>
           </p>
         </div>
@@ -278,7 +314,7 @@ function MissionManifesto() {
               <p className="relative mb-5 text-xs font-black uppercase tracking-[0.32em] text-[var(--accent-teal)]">
                 For {item.industry}
               </p>
-              <h3 className="relative mb-4 text-2xl font-black tracking-tight text-white md:text-3xl">
+              <h3 className="font-display relative mb-4 text-2xl font-bold text-white md:text-3xl">
                 That mission is:{" "}
                 <span className="text-[var(--accent-green)]">{item.mission}</span>
               </h3>
@@ -293,14 +329,13 @@ function MissionManifesto() {
         </div>
 
         <div className="mx-auto mt-14 max-w-5xl text-center">
-          <p className="text-balance text-2xl font-black leading-tight text-white md:text-4xl">
+          <p className="font-display text-balance text-2xl font-bold leading-tight text-white md:text-4xl">
             No breaks. No distractions. No excuses.{" "}
-            <span className="text-[var(--accent-teal)]">One mission.</span>{" "}
-            Executed{" "}
+            <span className="text-[var(--accent-teal)]">One mission.</span> Executed{" "}
             <span className="text-[var(--accent-green)]">relentlessly.</span>
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <MagneticButton href="#voice-demo">Talk to a CyberWolf AI Employee Now</MagneticButton>
+            <MagneticButton href="#voice-demo">Talk to an AI Employee Now</MagneticButton>
             <MagneticButton href="#book" variant="secondary">
               Book a Free Consultation
             </MagneticButton>
@@ -319,7 +354,7 @@ function ServicesGrid() {
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
             What We Build
           </p>
-          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
             AI systems that answer, route, book, follow up, and execute.
           </h2>
         </div>
@@ -334,7 +369,9 @@ function ServicesGrid() {
                   {service.icon}
                 </div>
               </div>
-              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{service.title}</h3>
+              <h3 className="font-display mb-3 text-2xl font-bold text-[var(--text-primary)]">
+                {service.title}
+              </h3>
               <p className="text-sm leading-7 text-[var(--text-muted)]">{service.copy}</p>
             </SpotlightCard>
           ))}
@@ -346,12 +383,12 @@ function ServicesGrid() {
 
 function Differentiator() {
   const rows = [
-    ["Answers your phone 24/7", "No", "No", "Yes"],
-    ["Books appointments automatically", "No", "No", "Yes"],
-    ["You own everything", "No", "Yes", "Yes"],
-    ["Production-grade AI", "No", "No", "Yes"],
-    ["Live in days, not months", "No", "Yes", "Yes"],
-  ];
+    ["Answers your phone 24/7", false, false, true],
+    ["Books appointments automatically", false, false, true],
+    ["You own everything", false, true, true],
+    ["Production-grade AI", false, false, true],
+    ["Live in days, not months", false, true, true],
+  ] as const;
 
   return (
     <section className="relative px-6 py-24">
@@ -360,26 +397,35 @@ function Differentiator() {
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
             The Difference
           </p>
-          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
             Other agencies build websites. CyberWolf builds AI employees.
           </h2>
         </div>
         <div className="overflow-hidden rounded-2xl border border-white/10">
           <div className="grid grid-cols-4 bg-white/[0.04] text-xs font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
             <div className="p-4">Capability</div>
-            <div className="p-4">Agency</div>
-            <div className="p-4">DIY</div>
-            <div className="p-4 text-[var(--accent-teal)]">CyberWolf</div>
+            <div className="p-4 text-center">Agency</div>
+            <div className="p-4 text-center">DIY</div>
+            <div className="p-4 text-center text-[var(--accent-teal)]">CyberWolf</div>
           </div>
           {rows.map((row) => (
             <div key={row[0]} className="grid grid-cols-4 border-t border-white/10 text-sm">
               <div className="p-4 font-semibold text-[var(--text-primary)]">{row[0]}</div>
               {row.slice(1).map((value, index) => (
-                <div
-                  key={`${row[0]}-${index}`}
-                  className={`p-4 ${value === "Yes" ? "text-[var(--accent-green)]" : "text-[var(--text-muted)]"}`}
-                >
-                  {value}
+                <div key={`${row[0]}-${index}`} className="grid place-items-center p-4">
+                  {value ? (
+                    <span
+                      className={`grid h-6 w-6 place-items-center rounded-full text-xs font-black ${
+                        index === 2
+                          ? "bg-[var(--accent-green)]/15 text-[var(--accent-green)] shadow-[0_0_16px_rgba(70,235,159,0.25)]"
+                          : "bg-white/[0.06] text-[var(--text-muted)]"
+                      }`}
+                    >
+                      ✓
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-muted)]/50">—</span>
+                  )}
                 </div>
               ))}
             </div>
@@ -417,15 +463,19 @@ function Process() {
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
             How We Work
           </p>
-          <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+          <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
             Built on your accounts. Owned by you.
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {steps.map((step) => (
             <SpotlightCard key={step.step}>
-              <div className="mb-6 text-5xl font-black text-[var(--accent-teal)]/30">{step.step}</div>
-              <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{step.title}</h3>
+              <div className="font-display mb-6 text-5xl font-bold text-[var(--accent-teal)]/30">
+                {step.step}
+              </div>
+              <h3 className="font-display mb-3 text-2xl font-bold text-[var(--text-primary)]">
+                {step.title}
+              </h3>
               <p className="text-sm leading-7 text-[var(--text-muted)]">{step.copy}</p>
             </SpotlightCard>
           ))}
@@ -447,7 +497,7 @@ function VerticalCards() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
               Industry Systems
             </p>
-            <h2 className="max-w-3xl text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+            <h2 className="font-display max-w-3xl text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
               Five verticals. One operating principle: never miss the call.
             </h2>
           </div>
@@ -471,12 +521,17 @@ function VerticalCards() {
                   className="object-cover opacity-80 transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.05),rgba(5,7,11,0.72)),radial-gradient(circle_at_top_left,rgba(0,185,255,0.24),transparent_44%)]" />
+                <p className="absolute bottom-2 left-3 right-3 truncate text-[10px] font-semibold italic text-white/80">
+                  {vertical.callLine}
+                </p>
               </div>
               <div className="p-5">
-                <p className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent-green)]">
+                <p className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-[var(--accent-green)]">
                   {vertical.title}
                 </p>
-                <h3 className="mb-3 text-2xl font-black text-[var(--text-primary)]">{vertical.product}</h3>
+                <h3 className="font-display mb-3 text-2xl font-bold text-[var(--text-primary)]">
+                  {vertical.product}
+                </h3>
                 <p className="mb-5 text-sm leading-6 text-[var(--text-muted)]">{vertical.copy}</p>
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-teal)]">
                   Learn More -&gt;
@@ -490,24 +545,105 @@ function VerticalCards() {
   );
 }
 
-function SocialProof() {
+function FlagshipCase() {
+  const callSnippet = [
+    { who: "Caller", text: "Do you have anything for six people on Saturday?" },
+    { who: "AI", text: "We do — 6:30 or 8:15. Which works better?" },
+    { who: "Caller", text: "8:15. Last name Chen." },
+  ];
+
   return (
     <section id="proof" className="px-6 py-24">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-7xl">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
           Proof Of Work
         </p>
-        <h2 className="mb-6 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
+        <h2 className="font-display mb-12 max-w-3xl text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
           Shipped systems, not slide decks.
         </h2>
-        <div className="space-y-4">
+
+        <div className="grid gap-6 rounded-[2rem] border border-[var(--accent-teal)]/25 bg-[radial-gradient(circle_at_top_left,rgba(0,185,255,0.12),rgba(13,17,23,0.9)_46%,rgba(5,7,11,0.96))] p-6 md:grid-cols-[0.85fr_1.15fr] md:p-10">
+          <div className="flex flex-col justify-center">
+            <div className="rounded-[1.5rem] border border-white/10 bg-[#070b12]/90 p-5">
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--accent-green)]">
+                  ● Live production call flow
+                </p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+                  DineLine V2
+                </p>
+              </div>
+              <div className="space-y-2.5">
+                {callSnippet.map((line) => (
+                  <div
+                    key={line.text}
+                    className={`max-w-[88%] rounded-xl px-3.5 py-2 text-xs leading-5 ${
+                      line.who === "AI"
+                        ? "border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 text-[var(--text-primary)]"
+                        : "ml-auto border border-white/10 bg-white/[0.06] text-[var(--text-primary)]"
+                    }`}
+                  >
+                    <span
+                      className={`mr-2 text-[9px] font-bold uppercase tracking-[0.18em] ${
+                        line.who === "AI" ? "text-[var(--accent-teal)]" : "text-[var(--accent-green)]"
+                      }`}
+                    >
+                      {line.who}
+                    </span>
+                    {line.text}
+                  </div>
+                ))}
+                <div className="rounded-xl border border-[var(--accent-green)]/35 bg-[var(--accent-green)]/10 px-3.5 py-2 text-xs font-semibold text-[var(--text-primary)]">
+                  ✓ Booked — Chen · 6 guests · Sat 8:15 PM · SMS sent
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-green)]">
+              Flagship System — Live
+            </p>
+            <h3 className="font-display mt-3 text-2xl font-bold text-white md:text-4xl">
+              DineLine V2: the AI host that never puts a guest on hold.
+            </h3>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-muted)] md:text-base">
+              A production voice agent for restaurants: it answers the line, checks
+              availability, books the table, sends the confirmation, and hands edge cases to a
+              human. Built on the same stack we deploy for every vertical — and it runs on the
+              restaurant&apos;s own accounts, not ours.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["VAPI", "n8n", "ElevenLabs", "Twilio"].map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--accent-teal)]"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <MagneticButton href="/dineline">See DineLine</MagneticButton>
+              <MagneticButton href="/restaurants" variant="secondary">
+                Restaurant Systems
+              </MagneticButton>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
           {proofItems.map((item) => (
-            <div key={item} className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-sm text-[var(--text-muted)]">
+            <div
+              key={item}
+              className="rounded-2xl border border-[var(--border)] bg-white/[0.035] p-4 text-sm text-[var(--text-muted)]"
+            >
               <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[var(--accent-green)] shadow-[0_0_14px_rgba(70,235,159,0.65)]" />
               {item}
             </div>
           ))}
         </div>
+
         <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] bg-black/35 py-4">
           <motion.div
             className="flex w-max gap-3 px-4"
@@ -532,28 +668,45 @@ function SocialProof() {
 function AboutFounder() {
   return (
     <section id="about" className="px-6 py-20">
-      <div className="mx-auto max-w-5xl rounded-[2rem] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(0,185,255,0.12),rgba(5,7,11,0.92)_42%,rgba(70,235,159,0.09))] p-6 shadow-[0_0_70px_rgba(0,185,255,0.08)] md:p-10">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
-          About CyberWolf
-        </p>
-        <h2 className="mb-6 max-w-3xl text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
-          Built by an Enterprise Sales Veteran Who Actually Ships AI.
-        </h2>
-        <div className="grid gap-6 md:grid-cols-[1fr_0.35fr] md:items-end">
-          <p className="text-base leading-8 text-[var(--text-muted)] md:text-lg">
-            CyberWolf AI Systems was founded by Greg Schwartz, a 20-year enterprise sales and
-            business development leader who builds the AI systems he deploys. ODSC AI Engineering
-            Accelerator graduate. Builder of DineLine V2, a live voice AI restaurant
-            booking system. Greg sits in both seats: he closes enterprise deals and opens the
-            terminal. That&apos;s the CyberWolf difference.
-          </p>
-          <div className="rounded-[1.5rem] border border-[var(--accent-teal)]/25 bg-black/35 p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent-teal)]">
-              Sales + Systems
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-[var(--border)] bg-[linear-gradient(135deg,rgba(0,185,255,0.12),rgba(5,7,11,0.92)_42%,rgba(70,235,159,0.09))] p-6 shadow-[0_0_70px_rgba(0,185,255,0.08)] md:p-10">
+        <div className="grid gap-8 md:grid-cols-[0.32fr_1fr] md:items-center">
+          <div className="mx-auto flex w-full max-w-[220px] flex-col items-center rounded-[1.75rem] border border-[var(--accent-teal)]/25 bg-black/40 p-6 text-center">
+            <div className="font-display grid h-24 w-24 place-items-center rounded-full border-2 border-[var(--accent-teal)]/40 bg-[radial-gradient(circle_at_50%_35%,rgba(0,185,255,0.25),rgba(5,7,11,0.95)_70%)] text-3xl font-bold text-[var(--text-primary)] shadow-[0_0_40px_rgba(0,185,255,0.25)]">
+              GS
+            </div>
+            <p className="font-display mt-4 text-lg font-bold text-white">Greg Schwartz</p>
+            <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--accent-teal)]">
+              Founder & AI Engineer
             </p>
-            <p className="mt-4 text-sm leading-7 text-[var(--text-muted)]">
-              Strategy, implementation, testing, and deployment under one roof.
+            <p className="mt-3 text-[11px] leading-5 text-[var(--text-muted)]">
+              Enterprise sales veteran. ODSC AI Engineering Accelerator graduate.
             </p>
+          </div>
+
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
+              About CyberWolf
+            </p>
+            <h2 className="font-display mb-5 max-w-3xl text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
+              You talk to the person who builds the system.
+            </h2>
+            <p className="max-w-3xl text-base leading-8 text-[var(--text-muted)] md:text-lg">
+              No account managers, no offshore hand-offs, no ticket queues. CyberWolf was founded
+              by Greg Schwartz — a 20-year enterprise sales and business development leader who
+              builds the AI systems he deploys. Builder of DineLine V2, a live voice AI
+              restaurant booking system. Greg sits in both seats: he closes enterprise deals and
+              opens the terminal. That&apos;s the CyberWolf difference.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Strategy", "Implementation", "Testing", "Deployment"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -569,8 +722,8 @@ function VoiceDemo() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
           Live Product Demo
         </p>
-        <h2 className="mb-5 text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
-          Don&apos;t take our word for it. Talk to our AI right now.
+        <h2 className="font-display mb-5 text-3xl font-bold text-[var(--text-primary)] md:text-5xl">
+          Don&apos;t book a demo. Have the demo answer you.
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-sm leading-7 text-[var(--text-muted)]">
           The voice widget is the product demonstrating itself. Ask it what CyberWolf builds,
@@ -591,7 +744,7 @@ function ContactBlock() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-green)]">
               Start Here
             </p>
-            <h2 className="mb-4 text-3xl font-black tracking-tight text-white md:text-5xl">
+            <h2 className="font-display mb-4 text-3xl font-bold text-white md:text-5xl">
               Ready to put an AI employee to work?
             </h2>
             <p className="text-sm leading-7 text-[var(--text-muted)] md:text-base">
@@ -625,11 +778,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <MissionManifesto />
+      <MissedCallMath />
       <ServicesGrid />
       <Differentiator />
       <Process />
       <VerticalCards />
-      <SocialProof />
+      <FlagshipCase />
       <AboutFounder />
       <VoiceDemo />
       <ContactBlock />

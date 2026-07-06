@@ -42,7 +42,8 @@ export function CalendlySection() {
                   Calendly placeholder
                 </p>
                 <p className="max-w-xl text-sm text-[var(--text-muted)]">
-                  Add `NEXT_PUBLIC_CALENDLY_URL` when Wolf provides the booking link.
+                  Booking is temporarily offline. Email gregs@cyberwolfaisystems.com and
+                  we&apos;ll get you on the calendar directly.
                 </p>
               </div>
             </div>
