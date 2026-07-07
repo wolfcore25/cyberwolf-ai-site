@@ -16,7 +16,7 @@ type VerticalLandingPageProps = {
 export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
-      <section className="relative min-h-[86vh] overflow-hidden px-6 pb-24 pt-8">
+      <section className="relative min-h-[86vh] overflow-hidden px-4 pb-24 pt-8 sm:px-6">
         <AuroraBackground />
         <AnimatedGrid />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -31,7 +31,7 @@ export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
               href="#book"
               className="hidden rounded-full border border-[var(--accent-teal)]/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent-teal)] transition hover:bg-[var(--accent-teal)] hover:text-black sm:inline-flex"
             >
-              Book a Call
+              Book the Build Call
             </a>
           </nav>
 
@@ -48,9 +48,9 @@ export function VerticalLandingPage({ page }: VerticalLandingPageProps) {
                 and keep working when the office is closed.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <MagneticButton href="#demo">{page.primaryCta}</MagneticButton>
+                <MagneticButton href="#demo">Talk to the AI</MagneticButton>
                 <MagneticButton href="#book" variant="secondary">
-                  Book a free consultation
+                  Book the Build Call
                 </MagneticButton>
               </div>
             </div>

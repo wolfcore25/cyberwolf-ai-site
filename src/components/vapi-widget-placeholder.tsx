@@ -88,7 +88,7 @@ export function VapiWidgetPlaceholder() {
       ? "Connecting"
       : status === "live"
         ? "End Voice Demo"
-        : "Talk to CyberWolf";
+        : "Talk to the AI";
 
   const statusLabel =
     status === "unconfigured"

@@ -42,13 +42,15 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-3">3. DineLine SMS Terms</h2>
+            <h2 className="text-xl font-semibold text-white mb-3">3. SMS Messaging Terms</h2>
             <p>
-              By agreeing to receive DineLine SMS updates, you consent to receive transactional
-              text messages from CyberWolf AI Systems related to restaurant lookup and booking
-              requests you initiate. Message frequency varies based on your request. Message and
-              data rates may apply. Reply STOP to opt out at any time. Reply HELP for help.
-              Consent to receive SMS messages is not a condition of purchase.
+              By agreeing to receive SMS updates from CyberWolf AI Systems, you consent to
+              receive transactional text messages including appointment confirmations, scheduling
+              reminders, booking status updates, and support replies. Message frequency varies
+              based on your request. Message and data rates may apply. Reply{" "}
+              <strong className="text-white">STOP</strong> to opt out at any time. Reply{" "}
+              <strong className="text-white">HELP</strong> for help. Consent to receive SMS
+              messages is not a condition of purchase.
             </p>
             <p className="mt-4">
               CyberWolf AI Systems does not sell, rent, share, or disclose mobile phone numbers,

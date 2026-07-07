@@ -61,38 +61,38 @@ export function LiveCallDemo() {
   const confirmed = step >= CONFIRM_STEP;
 
   return (
-    <div className="relative w-full max-w-md">
-      <div className="pointer-events-none absolute -inset-6 rounded-[3rem] bg-[radial-gradient(circle_at_50%_0%,rgba(0,185,255,0.16),transparent_65%)] blur-xl" />
+    <div className="relative mx-auto w-full max-w-[18.75rem] sm:max-w-md">
+      <div className="pointer-events-none absolute -inset-3 rounded-[3rem] bg-[radial-gradient(circle_at_50%_0%,rgba(0,185,255,0.16),transparent_65%)] blur-xl sm:-inset-6" />
 
       <div className="relative overflow-hidden rounded-[2rem] border border-[var(--accent-teal)]/25 bg-[#070b12]/90 shadow-[0_30px_90px_rgba(0,0,0,0.55),0_0_50px_rgba(0,185,255,0.10)] backdrop-blur">
         {/* header */}
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
+        <div className="flex items-center justify-between gap-3 border-b border-white/10 px-3 py-3 sm:px-5 sm:py-3.5">
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-2.5 w-2.5">
               <span className="ring-pulse absolute inline-flex h-full w-full rounded-full bg-[var(--accent-green)]" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--accent-green)]" />
             </span>
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--accent-green)]">
+            <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--accent-green)] sm:text-[10px] sm:tracking-[0.24em]">
               DineLine V2 · Live System
             </p>
           </div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          <p className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)] sm:text-[10px] sm:tracking-[0.18em]">
             Fri · 7:04 PM
           </p>
         </div>
 
         {/* incoming call strip */}
-        <div className="flex items-center justify-between border-b border-white/5 bg-white/[0.03] px-5 py-2.5">
+        <div className="flex items-center justify-between gap-3 border-b border-white/5 bg-white/[0.03] px-3 py-2.5 sm:px-5">
           <p className="text-xs font-semibold text-[var(--text-muted)]">
             {step === -1 ? "Incoming call — restaurant line…" : "Call in progress"}
           </p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-teal)]">
+          <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.12em] text-[var(--accent-teal)] sm:text-[10px] sm:tracking-[0.2em]">
             {step === -1 ? "Ring 1" : confirmed ? "Wrapped" : "AI answered"}
           </p>
         </div>
 
         {/* transcript */}
-        <div className="flex min-h-[300px] flex-col justify-end gap-2.5 px-5 py-5 sm:min-h-[320px]">
+        <div className="flex min-h-[270px] flex-col justify-end gap-2.5 px-3 py-4 sm:min-h-[320px] sm:px-5 sm:py-5">
           <AnimatePresence initial={false}>
             {visibleLines.map((line, i) => (
               <motion.div
@@ -100,7 +100,7 @@ export function LiveCallDemo() {
                 initial={reduceMotion ? false : { opacity: 0, y: 14, scale: 0.97 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-[13px] leading-6 ${
+                className={`max-w-[92%] rounded-2xl px-3 py-2.5 text-[12px] leading-5 sm:max-w-[85%] sm:px-4 sm:text-[13px] sm:leading-6 ${
                   line.who === "ai"
                     ? "self-start rounded-bl-md border border-[var(--accent-teal)]/25 bg-[var(--accent-teal)]/10 text-[var(--text-primary)]"
                     : "self-end rounded-br-md border border-white/10 bg-white/[0.06] text-[var(--text-primary)]"
@@ -123,7 +123,7 @@ export function LiveCallDemo() {
                 initial={reduceMotion ? false : { opacity: 0, y: 16, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="mt-1 rounded-2xl border border-[var(--accent-green)]/40 bg-[var(--accent-green)]/10 px-4 py-3.5 shadow-[0_0_35px_rgba(70,235,159,0.12)]"
+                className="mt-1 rounded-2xl border border-[var(--accent-green)]/40 bg-[var(--accent-green)]/10 px-3 py-3 shadow-[0_0_35px_rgba(70,235,159,0.12)] sm:px-4 sm:py-3.5"
               >
                 <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--accent-green)]">
                   ✓ Reservation confirmed
@@ -140,9 +140,9 @@ export function LiveCallDemo() {
         </div>
 
         {/* waveform + footer */}
-        <div className="border-t border-white/10 px-5 pb-4 pt-3">
+        <div className="border-t border-white/10 px-3 pb-3 pt-3 sm:px-5 sm:pb-4">
           <Waveform speaker={reduceMotion ? null : speaking} />
-          <div className="mt-2 flex items-center justify-between text-[9px] font-bold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+          <div className="mt-2 flex items-center justify-between gap-2 text-[8px] font-bold uppercase tracking-[0.06em] text-[var(--text-muted)] sm:text-[9px] sm:tracking-[0.16em]">
             <span>Answered on ring one</span>
             <span className="text-[var(--accent-teal)]">42 seconds</span>
             <span>0 staff interrupted</span>

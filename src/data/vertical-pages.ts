@@ -17,7 +17,7 @@ export const verticalPages: Record<string, VerticalPage> = {
     slug: "restaurants",
     product: "DineLine",
     industry: "Restaurants",
-    headline: "AI that books your reservations by phone. Your hostess never takes a night off.",
+    headline: "AI that books your reservations by phone. Your host never takes a night off.",
     painPoints: [
       "Missed calls during dinner rush = lost reservations",
       "Staff can't answer phones while serving tables",

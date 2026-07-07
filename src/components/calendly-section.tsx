@@ -15,7 +15,7 @@ export function CalendlySection() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-[var(--accent-teal)]">
-            Book The Build Call
+            Book the Build Call
           </p>
           <h2 className="text-3xl font-black tracking-tight text-[var(--text-primary)] md:text-5xl">
             Ready to deploy AI that actually works?

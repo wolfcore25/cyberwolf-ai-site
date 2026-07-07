@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { metadataBase } from "@/lib/seo";
+import { createBusinessSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
@@ -9,6 +10,7 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
   variable: "--font-display",
 });
+const businessSchema = createBusinessSchema();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "CyberWolf AI Systems",
     images: [
       {
-        url: "/logo-main.png",
+        url: "/cyberwolf-og.png",
         width: 1200,
         height: 630,
         alt: "CyberWolf AI Systems",
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
     title: "CyberWolf AI Systems | AI Employees for Real Business Workflows",
     description:
       "Production AI agents that handle real calls, real customers, real revenue. Deployed on your accounts. Owned by you.",
-    images: ["/logo-main.png"],
+    images: ["/cyberwolf-og.png"],
   },
 };
 
@@ -77,8 +79,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} bg-black text-white antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} overflow-x-hidden bg-black text-white antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
         {children}
       </body>
     </html>

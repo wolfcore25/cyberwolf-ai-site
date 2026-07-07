@@ -150,7 +150,7 @@ function Navbar() {
           href="#voice-demo"
           className="hidden rounded-full border border-[var(--accent-teal)]/50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent-teal)] transition hover:bg-[var(--accent-teal)] hover:text-black sm:inline-flex"
         >
-          Talk to AI
+          Talk to the AI
         </a>
       </div>
     </header>
@@ -159,19 +159,19 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-16 pt-28 md:pb-24 md:pt-36">
+    <section className="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-36">
       <AuroraBackground />
       <BackgroundBeams />
       <AnimatedGrid />
       <div className="pointer-events-none absolute inset-x-0 top-10 z-[1] mx-auto h-[40rem] max-w-5xl rounded-full bg-[radial-gradient(circle,rgba(0,185,255,0.15)_0%,rgba(70,235,159,0.06)_38%,transparent_70%)] blur-2xl" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="flex w-full min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent-green)] sm:text-xs sm:tracking-[0.26em]"
+            className="mb-8 inline-flex max-w-[calc(100vw-2rem)] items-center justify-center gap-2 rounded-full border border-[var(--border)] bg-white/[0.04] px-2.5 py-2 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-[var(--accent-green)] sm:max-w-full sm:px-4 sm:text-xs sm:tracking-[0.26em]"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-green)] shadow-[0_0_12px_rgba(70,235,159,0.9)]" />
             Not chatbots. Not widgets. AI employees.
@@ -181,7 +181,7 @@ function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.08 }}
-            className="font-display max-w-[24rem] text-balance text-4xl font-bold leading-[1.04] text-white sm:max-w-2xl sm:text-5xl md:text-6xl md:leading-[1.0] xl:text-7xl"
+            className="font-display w-full max-w-[18.5rem] break-words text-balance text-[2.08rem] font-bold leading-[1.08] text-white sm:max-w-2xl sm:text-5xl md:text-6xl md:leading-[1.0] xl:text-7xl"
           >
             Your AI employee answers the phone,{" "}
             <span className="cyber-gradient-text">books the appointment</span>, and never calls
@@ -192,7 +192,7 @@ function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18 }}
-            className="mt-7 max-w-xl text-sm leading-7 text-[var(--text-muted)] sm:text-base md:text-lg md:leading-8"
+            className="mt-7 w-full max-w-[18.5rem] text-sm leading-7 text-[var(--text-muted)] sm:max-w-xl sm:text-base md:text-lg md:leading-8"
           >
             Production voice AI that makes and takes real phone calls — deployed on your
             accounts, wired into your calendar, owned by you. Watch one work →
@@ -202,9 +202,9 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.28 }}
-            className="mt-9 flex flex-col items-center gap-4 sm:flex-row"
+            className="mt-9 flex w-full max-w-[18.5rem] flex-col items-center gap-4 sm:max-w-none sm:flex-row"
           >
-            <MagneticButton href="#voice-demo">Talk to CyberWolf</MagneticButton>
+            <MagneticButton href="#voice-demo">Talk to the AI</MagneticButton>
             <MagneticButton href="#book" variant="secondary">
               Book the Build Call
             </MagneticButton>
@@ -214,7 +214,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.42 }}
-            className="mt-10 grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-3"
+            className="mt-10 grid w-full max-w-[18.5rem] grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-3"
           >
             {["DineLine V2 Live", "20+ Years Enterprise Sales", "You Own Everything"].map(
               (proof) => (
@@ -233,7 +233,7 @@ function Hero() {
           initial={{ opacity: 0, y: 32, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="flex justify-center lg:justify-end"
+          className="flex w-full min-w-0 justify-center lg:justify-end"
         >
           <LiveCallDemo />
         </motion.div>
@@ -288,7 +288,7 @@ function MissionManifesto() {
           <p className="mx-auto mt-8 max-w-4xl text-base leading-8 text-[var(--text-muted)] md:text-lg md:leading-9">
             CyberWolf AI employees don&apos;t take lunch breaks. They don&apos;t call in sick.
             They&apos;re not thinking about date night or checking their phone. They don&apos;t
-            get tired at 2 AM. They don&apos;t give up when someone says no.
+            get tired at 2 AM. They keep following up until the workflow is complete.
           </p>
         </div>
 
@@ -335,9 +335,9 @@ function MissionManifesto() {
             <span className="text-[var(--accent-green)]">relentlessly.</span>
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <MagneticButton href="#voice-demo">Talk to an AI Employee Now</MagneticButton>
+            <MagneticButton href="#voice-demo">Talk to the AI</MagneticButton>
             <MagneticButton href="#book" variant="secondary">
-              Book a Free Consultation
+              Book the Build Call
             </MagneticButton>
           </div>
         </div>
@@ -760,9 +760,9 @@ function ContactBlock() {
               gregs@cyberwolfaisystems.com
             </a>
             <div className="grid gap-3 sm:grid-cols-2">
-              <MagneticButton href="#book">Book Call</MagneticButton>
+              <MagneticButton href="#book">Book the Build Call</MagneticButton>
               <MagneticButton href="#voice-demo" variant="secondary">
-                Talk to AI
+                Talk to the AI
               </MagneticButton>
             </div>
           </div>

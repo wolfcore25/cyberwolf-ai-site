@@ -3,7 +3,7 @@ import type { VerticalPage } from "@/data/vertical-pages";
 
 const siteUrl = "https://cyberwolfaisystems.com";
 const siteName = "CyberWolf AI Systems";
-const defaultImage = "/logo-main.png";
+const defaultImage = "/cyberwolf-og.png";
 
 type SeoOptions = {
   title: string;

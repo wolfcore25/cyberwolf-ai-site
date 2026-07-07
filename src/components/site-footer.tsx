@@ -16,7 +16,7 @@ export function SiteFooter() {
           {[
             ["Home", "/"],
             ["Web Solutions", "/web-solutions"],
-            ["Book", "#book"],
+            ["Book the Build Call", "#book"],
             ["Contact", "/contact"],
             ["Privacy", "/privacy"],
             ["Terms", "/terms"],
