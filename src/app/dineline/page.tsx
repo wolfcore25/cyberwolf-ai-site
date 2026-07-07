@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "DineLine",
+  description:
+    "DineLine is a voice-based restaurant booking assistant by CyberWolf AI Systems with customer-requested transactional booking updates by SMS.",
+};
+
 export default function DineLinePage() {
   return (
     <main className="min-h-screen bg-[var(--cyber-darker)]">

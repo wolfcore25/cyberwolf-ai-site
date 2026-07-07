@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Terms of Service",
+};
+
 export default function TermsOfService() {
   return (
     <main className="min-h-screen bg-[var(--cyber-darker)]">
