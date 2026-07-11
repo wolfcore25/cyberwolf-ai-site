@@ -3,9 +3,9 @@ import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...createSeoMetadata({
-    title: "DineLine Restaurant Booking AI",
+    title: "DineLine Restaurant Concierge AI",
     description:
-      "DineLine is a voice-based restaurant booking assistant by CyberWolf AI Systems with customer-requested transactional booking updates by SMS.",
+      "DineLine is CyberWolf AI Systems' original diner-side restaurant concierge that finds restaurants, calls on behalf of the diner, and attempts reservations by phone.",
     path: "/dineline",
   }),
 };

@@ -73,7 +73,7 @@ export function LiveCallDemo() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--accent-green)]" />
             </span>
             <p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--accent-green)] sm:text-[10px] sm:tracking-[0.24em]">
-              DineLine V2 · Live System
+              Restaurant AI Host · Live System
             </p>
           </div>
           <p className="shrink-0 text-[9px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)] sm:text-[10px] sm:tracking-[0.18em]">

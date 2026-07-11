@@ -77,8 +77,8 @@ const verticals = [
   {
     href: "/restaurants",
     title: "Restaurants",
-    product: "DineLine",
-    copy: "AI that books reservations by phone and keeps the front desk clear during the rush.",
+    product: "Restaurant AI Host",
+    copy: "AI that works for the restaurant: answers calls, takes orders, books tables, and keeps the front desk clear.",
     callLine: "“Table for four at 7:45 — confirmed.”",
     image:
       "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
@@ -122,7 +122,7 @@ const verticals = [
 ];
 
 const proofItems = [
-  "DineLine V2: live AI restaurant booking system",
+  "DineLine V2: live diner-side restaurant concierge",
   "ODSC AI Engineering Accelerator graduate",
   "20+ years enterprise sales and business development",
   "Systems built around real calls, real customers, real revenue",
@@ -252,7 +252,7 @@ function MissionManifesto() {
     {
       industry: "Restaurants",
       mission: "Never miss a reservation.",
-      copy: "Never lose a customer to a busy signal. At 7 PM on a Friday when your host stand is slammed and three lines are ringing, your AI employee answers every call. Takes the reservation, confirms availability, handles special requests, books the table. No hold music. No voicemail. No lost covers. Your human staff stays with the guests. Your AI employee handles the phones.",
+      copy: "Never lose a customer to a busy signal. At 7 PM on a Friday when your host stand is slammed and three lines are ringing, your AI employee answers every call. It can take reservation details, capture takeout orders, handle special requests, and route anything complex to staff. No hold music. No voicemail. No lost covers. Your human staff stays with the guests. Your AI employee handles the phones.",
     },
     {
       industry: "Law Firms",
@@ -565,9 +565,9 @@ function VerticalCards() {
 
 function FlagshipCase() {
   const callSnippet = [
-    { who: "Caller", text: "Do you have anything for six people on Saturday?" },
-    { who: "AI", text: "We do — 6:30 or 8:15. Which works better?" },
-    { who: "Caller", text: "8:15. Last name Chen." },
+    { who: "Caller", text: "Find a nice restaurant for six people on Saturday." },
+    { who: "AI", text: "I found a strong option and can call to book 8:15." },
+    { who: "Caller", text: "Perfect. Book it under Chen." },
   ];
 
   return (
@@ -620,16 +620,17 @@ function FlagshipCase() {
 
           <div className="flex flex-col justify-center">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-green)]">
-              Flagship System — Live
+              Flagship Proof System
             </p>
             <h3 className="font-display mt-3 text-2xl font-bold text-white md:text-4xl">
-              DineLine V2: the AI host that never puts a guest on hold.
+              DineLine V2: the diner-side concierge that books restaurants by phone.
             </h3>
             <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-muted)] md:text-base">
-              A production voice agent for restaurants: it answers the line, checks
-              availability, books the table, sends the confirmation, and hands edge cases to a
-              human. Built on the same stack we deploy for every vertical — and it runs on the
-              restaurant&apos;s own accounts, not ours.
+              The original DineLine build works on behalf of the restaurant seeker: it finds
+              options, presents recommendations, calls the restaurant, and reports the confirmed
+              or declined outcome. Building it exposed the bigger business opportunity: the same
+              architecture can work for restaurants as their autonomous phone host for reservations,
+              order capture, guest questions, and front-desk overflow.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["VAPI", "n8n", "ElevenLabs", "Twilio"].map((tech) => (
@@ -644,7 +645,7 @@ function FlagshipCase() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <MagneticButton href="/dineline">See DineLine</MagneticButton>
               <MagneticButton href="/restaurants" variant="secondary">
-                Restaurant Systems
+                Restaurant AI Host
               </MagneticButton>
             </div>
           </div>
@@ -711,8 +712,8 @@ function AboutFounder() {
             <p className="max-w-3xl text-base leading-8 text-[var(--text-muted)] md:text-lg">
               No account managers, no offshore hand-offs, no ticket queues. CyberWolf was founded
               by Greg Schwartz — a 20-year enterprise sales and business development leader who
-              builds the AI systems he deploys. Builder of DineLine V2, a live voice AI
-              restaurant booking system. Greg sits in both seats: he closes enterprise deals and
+              builds the AI systems he deploys. Builder of DineLine V2, a live diner-side
+              restaurant concierge that calls and books by phone. Greg sits in both seats: he closes enterprise deals and
               opens the terminal. That&apos;s the CyberWolf difference.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">

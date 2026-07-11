@@ -15,18 +15,18 @@ export type VerticalPage = {
 export const verticalPages: Record<string, VerticalPage> = {
   restaurants: {
     slug: "restaurants",
-    product: "DineLine",
+    product: "Restaurant AI Host",
     industry: "Restaurants",
-    headline: "AI that books your reservations by phone. Your host never takes a night off.",
+    headline: "AI that answers your restaurant phone, takes orders, and books reservations.",
     painPoints: [
       "Missed calls during dinner rush = lost reservations",
       "Staff can't answer phones while serving tables",
-      "Online booking systems feel impersonal",
+      "Takeout questions and special requests interrupt the floor",
       "No-shows cost restaurants thousands per month",
     ],
     solutionCopy:
-      "DineLine answers your restaurant's phone, takes reservation details naturally, confirms via SMS, and updates your booking system - all without human intervention. It sounds like a real person because it IS a real conversation, powered by AI.",
-    primaryCta: "Hear DineLine in action",
+      "The original DineLine proved the hard part: an AI concierge can search restaurants, call on behalf of a diner, and autonomously book the reservation. The restaurant-facing system flips that architecture around. Your AI host works for the restaurant: it answers incoming calls, takes reservation or order details, handles special requests, confirms by SMS, and routes edge cases to staff.",
+    primaryCta: "Hear the restaurant AI host",
     heroImage: {
       src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85",
       alt: "Warm, busy restaurant dining room with tables and ambient lighting",

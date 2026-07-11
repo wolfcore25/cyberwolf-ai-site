@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "DineLine",
   description:
-    "DineLine is a voice-based restaurant booking assistant by CyberWolf AI Systems with customer-requested transactional booking updates by SMS.",
+    "DineLine is CyberWolf AI Systems' original diner-side restaurant concierge that finds restaurants, calls on behalf of the diner, and attempts reservations by phone.",
 };
 
 export default function DineLinePage() {
@@ -28,12 +28,13 @@ export default function DineLinePage() {
             DineLine by CyberWolf AI Systems
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
-            Voice-based restaurant booking assistance with clear transactional updates.
+            The original restaurant concierge that calls on behalf of the diner.
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl leading-relaxed mb-10">
-            DineLine is a voice-based restaurant booking assistant by CyberWolf AI Systems.
-            Callers can ask DineLine to find restaurant options, attempt reservations, and send
-            transactional booking updates by SMS after consent.
+            DineLine began as a diner-side voice concierge. A caller tells it what kind of
+            restaurant they want, DineLine searches for options, presents recommendations, calls
+            the restaurant on the caller&apos;s behalf, and reports back whether the reservation was
+            confirmed or declined.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -66,8 +67,8 @@ export default function DineLinePage() {
               desc: "Callers can ask DineLine for restaurant options based on their request, location, timing, party size, and preferences.",
             },
             {
-              title: "Booking assistance",
-              desc: "DineLine can attempt reservation requests and provide booking status updates when information becomes available.",
+              title: "Autonomous outbound booking",
+              desc: "DineLine can call the restaurant on behalf of the caller, ask for availability, handle simple back-and-forth, and report the outcome.",
             },
             {
               title: "Transactional SMS",
@@ -79,6 +80,28 @@ export default function DineLinePage() {
               <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto border border-[var(--cyber-blue)]/25 rounded-xl p-8 md:p-12 bg-[var(--cyber-gray)]">
+          <div className="inline-block px-4 py-1 border border-[var(--cyber-blue)]/30 rounded-full text-[var(--cyber-blue)] text-xs tracking-widest uppercase mb-6">
+            What DineLine Proved
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            From diner-side concierge to restaurant-owned AI employee.
+          </h2>
+          <p className="text-gray-300 leading-relaxed mb-5">
+            Building DineLine revealed the larger business opportunity. If an AI concierge can
+            search, call, and book restaurants for the diner, the same architecture can be pointed
+            at the restaurant&apos;s own phones.
+          </p>
+          <p className="text-gray-300 leading-relaxed">
+            The restaurant-facing version works for the business: answering incoming calls,
+            taking reservation or order details, handling common guest questions, confirming by
+            SMS, and routing edge cases to staff. DineLine is the proof system. The restaurant AI
+            host is the commercial deployment.
+          </p>
         </div>
       </section>
 
