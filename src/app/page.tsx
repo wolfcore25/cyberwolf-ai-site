@@ -12,7 +12,6 @@ import {
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { VapiWidgetPlaceholder } from "@/components/vapi-widget-placeholder";
-import { AgentMark } from "@/components/agent-mark";
 import { CalendlySection } from "@/components/calendly-section";
 import { MobileStickyActions } from "@/components/mobile-sticky-actions";
 import { SiteFooter } from "@/components/site-footer";
@@ -20,6 +19,7 @@ import { LiveCallDemo } from "@/components/live-call-demo";
 import { MissedCallMath } from "@/components/missed-call-math";
 
 const navLinks = [
+  { href: "/web-solutions", label: "Web Solutions" },
   { href: "#services", label: "Services" },
   { href: "#verticals", label: "Industries" },
   { href: "#proof", label: "Proof" },
@@ -34,36 +34,42 @@ const services = [
     eyebrow: "Agent Build",
     title: "AI Agent Development",
     copy: "Custom autonomous agents. From chatbots to multi-step reasoning systems.",
+    href: "#book",
   },
   {
     icon: "24/7",
     eyebrow: "Voice Stack",
     title: "Voice AI & Phone Automation",
     copy: "AI answers your phone. Handles calls. Books appointments. 24/7.",
+    href: "#voice-demo",
   },
   {
     icon: "OPS",
     eyebrow: "Systems",
     title: "Multi-Agent Architecture",
     copy: "Orchestrated AI teams: research, execute, verify, report.",
+    href: "#book",
   },
   {
     icon: "EDU",
     eyebrow: "Enablement",
     title: "AI Consultation & Training",
     copy: "Hands-on training. Prompt engineering to full agent deployment.",
+    href: "#book",
   },
   {
     icon: "API",
     eyebrow: "Automation",
     title: "Workflow Automation",
     copy: "CRM, APIs, SMS, and email wired into intelligent pipelines. Less manual work.",
+    href: "#book",
   },
   {
     icon: "WEB",
     eyebrow: "Web",
     title: "AI-Ready Websites",
     copy: "Modern sites with AI chatbots and voice agents built in. From $149/mo.",
+    href: "/web-solutions",
   },
 ];
 
@@ -129,21 +135,20 @@ function Navbar() {
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#05070b]/75 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
         <Link href="/" className="flex items-center gap-3">
-          <AgentMark />
-          <div className="leading-tight">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-[var(--text-primary)]">
-              CyberWolf
-            </p>
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--accent-teal)]">
-              AI Systems
-            </p>
-          </div>
+          <Image
+            src="/logo-horizontal-light.png"
+            alt="CyberWolf AI Systems"
+            width={320}
+            height={96}
+            priority
+            className="h-11 w-auto"
+          />
         </Link>
-        <nav className="hidden items-center gap-6 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] lg:flex">
+        <nav className="hidden items-center gap-5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)] lg:flex xl:gap-6 xl:tracking-[0.18em]">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="transition hover:text-[var(--accent-teal)]">
+            <Link key={link.href} href={link.href} className="transition hover:text-[var(--accent-teal)]">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <a
@@ -359,22 +364,35 @@ function ServicesGrid() {
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <SpotlightCard key={service.title} className={index === 0 ? "lg:col-span-2" : ""}>
-              <div className="mb-6 flex items-center justify-between gap-4">
-                <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent-green)]">
-                  {service.eyebrow}
-                </p>
-                <div className="grid h-12 w-12 place-items-center rounded-2xl border border-[var(--accent-teal)]/30 bg-[var(--accent-teal)]/10 text-xs font-black tracking-[0.16em] text-[var(--accent-teal)] shadow-[0_0_24px_rgba(0,185,255,0.12)]">
-                  {service.icon}
-                </div>
-              </div>
-              <h3 className="font-display mb-3 text-2xl font-bold text-[var(--text-primary)]">
-                {service.title}
-              </h3>
-              <p className="text-sm leading-7 text-[var(--text-muted)]">{service.copy}</p>
-            </SpotlightCard>
-          ))}
+          {services.map((service, index) => {
+            const spanClass = index === 0 ? "lg:col-span-2" : "";
+
+            return (
+              <Link
+                key={service.title}
+                href={service.href}
+                className={`${spanClass} group block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-black`}
+              >
+                <SpotlightCard className="h-full transition duration-300 group-hover:-translate-y-1 group-hover:border-[var(--accent-teal)]/55 group-hover:shadow-[0_30px_90px_rgba(0,185,255,0.16)]">
+                  <div className="mb-6 flex items-center justify-between gap-4">
+                    <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--accent-green)]">
+                      {service.eyebrow}
+                    </p>
+                    <div className="grid h-12 w-12 place-items-center rounded-2xl border border-[var(--accent-teal)]/30 bg-[var(--accent-teal)]/10 text-xs font-black tracking-[0.16em] text-[var(--accent-teal)] shadow-[0_0_24px_rgba(0,185,255,0.12)]">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <h3 className="font-display mb-3 text-2xl font-bold text-[var(--text-primary)]">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm leading-7 text-[var(--text-muted)]">{service.copy}</p>
+                  <p className="mt-6 text-xs font-black uppercase tracking-[0.24em] text-[var(--accent-teal)] transition group-hover:text-[var(--accent-green)]">
+                    Learn more -&gt;
+                  </p>
+                </SpotlightCard>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
