@@ -20,7 +20,7 @@ export default function TermsOfService() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: May 22, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: July 13, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -44,18 +44,27 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">3. SMS Messaging Terms</h2>
             <p>
-              By agreeing to receive SMS updates from CyberWolf AI Systems, you consent to
-              receive transactional text messages including appointment confirmations, scheduling
-              reminders, booking status updates, and support replies. Message frequency varies
-              based on your request. Message and data rates may apply. Reply{" "}
+              The CyberWolf AI Systems SMS Messaging Program provides one-to-one transactional
+              messages, including appointment confirmations, scheduling reminders, callback
+              confirmations, booking status updates, requested follow-up information, call or
+              task-status notifications, and support replies. External recipients enroll by
+              clearly agreeing during a direct telephone conversation and providing or confirming
+              the mobile number before any SMS is sent. The CyberWolf AI Systems business owner
+              may separately enroll the owner&apos;s own mobile number by directly configuring and
+              authorizing it in the assistant service. Message frequency varies based on each
+              recipient&apos;s requests and appointments. Message and data rates may apply. Reply{" "}
               <strong className="text-white">STOP</strong> to opt out at any time. Reply{" "}
               <strong className="text-white">HELP</strong> for help. Consent to receive SMS
-              messages is not a condition of purchase.
+              messages is not a condition of purchase. For support, email{" "}
+              <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">
+                gregs@cyberwolfaisystems.com
+              </a>.
             </p>
             <p className="mt-4">
               CyberWolf AI Systems does not sell, rent, share, or disclose mobile phone numbers,
               SMS opt-in data, or SMS consent information to third parties or affiliates for
-              marketing or promotional purposes.
+              marketing or promotional purposes. We do not send promotional or unsolicited SMS
+              messages and do not use purchased, rented, or third-party lead lists.
             </p>
           </section>
 

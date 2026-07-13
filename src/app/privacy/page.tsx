@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: May 22, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: July 13, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
             <p className="mt-4"><strong className="text-white">Voice and phone interactions:</strong></p>
             <ul className="list-disc pl-6 space-y-1">
               <li>When you interact with DineLine or other CyberWolf AI Systems voice services, call details and transcripts may be used to complete your request and improve service quality</li>
-              <li>Phone numbers may be collected to provide customer-requested transactional updates, reservation confirmations, booking status updates, and support messages</li>
+              <li>Phone numbers may be collected to provide customer-requested transactional messages, including appointment confirmations, scheduling reminders, callback confirmations, booking status updates, requested follow-up information, call or task-status notifications, and support replies</li>
             </ul>
           </section>
 
@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-semibold text-white mb-3">3. How We Use Your Information</h2>
             <ul className="list-disc pl-6 space-y-1">
               <li>To provide DineLine restaurant lookup and booking assistance you request</li>
-              <li>To send customer-requested transactional updates, reservation confirmations, booking status updates, and support messages</li>
+              <li>To send customer-requested appointment confirmations, scheduling reminders, callback confirmations, booking status updates, requested follow-up information, call or task-status notifications, and support replies</li>
               <li>To respond to inquiries and provide customer support</li>
               <li>To operate, maintain, and improve CyberWolf AI Systems services</li>
               <li>To comply with legal obligations and protect against misuse</li>
@@ -67,22 +67,36 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white mb-3">4. SMS Consent and SMS Data</h2>
+            <h2 className="text-xl font-semibold text-white mb-3">4. SMS Messaging Consent and SMS Data</h2>
             <p>
-              DineLine sends SMS only after a caller requests restaurant booking assistance and
-              verbally agrees during the call to receive text updates. The assistant asks for
-              permission before sending SMS confirmation or booking updates.
+              The CyberWolf AI Systems SMS Messaging Program sends one-to-one transactional text
+              messages only after consent. External recipients opt in during a direct telephone
+              conversation with CyberWolf AI Systems. Before any text is sent, the representative
+              or voice assistant explains that the messages may include appointment confirmations,
+              scheduling reminders, callback confirmations, booking status updates, requested
+              follow-up information, and support replies; that message frequency varies; that
+              message and data rates may apply; and that the recipient may reply STOP to opt out or
+              HELP for help. The recipient must clearly agree and provide or confirm the mobile
+              number. If the recipient does not affirmatively consent, no SMS is sent. Consent is
+              not a condition of purchase.
             </p>
             <p className="mt-4">
-              CyberWolf AI Systems does not sell, rent, share, or disclose mobile phone numbers,
-              SMS opt-in data, or SMS consent information to third parties or affiliates for
-              marketing or promotional purposes. SMS data is used only to provide requested
-              DineLine reservation updates, confirmations, support messages, and related
-              transactional communications.
+              The CyberWolf AI Systems business owner separately opts in to receive call or
+              task-status notifications by directly configuring and authorizing the owner&apos;s own
+              mobile number in the assistant service.
             </p>
             <p className="mt-4">
-              Users may opt out of SMS messages at any time by replying STOP. Users may reply
-              HELP for assistance.
+              CyberWolf AI Systems does not use pre-checked boxes, purchased or rented lists, or
+              third-party lead lists for SMS messaging. We do not send promotional or unsolicited
+              SMS messages. We do not sell, rent, share, or disclose mobile phone numbers, SMS
+              opt-in data, or SMS consent information to third parties or affiliates for marketing
+              or promotional purposes. SMS data is used only for the transactional purposes
+              described above.
+            </p>
+            <p className="mt-4">
+              Users may opt out of SMS messages at any time by replying{" "}
+              <strong className="text-white">STOP</strong>. Users may reply{" "}
+              <strong className="text-white">HELP</strong> for assistance.
             </p>
           </section>
 
@@ -112,7 +126,12 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">7. Your Choices and Rights</h2>
-            <p>You may request access, correction, deletion, or a copy of personal information we hold about you. You may opt out of SMS by replying STOP.</p>
+            <p>
+              You may request access, correction, deletion, or a copy of personal information we
+              hold about you. You may opt out of SMS by replying{" "}
+              <strong className="text-white">STOP</strong> or reply{" "}
+              <strong className="text-white">HELP</strong> for assistance.
+            </p>
             <p className="mt-2">
               To exercise privacy rights or ask questions, contact us at{" "}
               <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">
