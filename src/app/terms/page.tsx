@@ -61,6 +61,11 @@ export default function TermsOfService() {
               </a>.
             </p>
             <p className="mt-4">
+              During each call, our AI assistant asks: May I send you a text message with your
+              appointment details and reminders? You can reply STOP at any time to opt out. SMS is
+              sent only after the customer verbally agrees.
+            </p>
+            <p className="mt-4">
               CyberWolf AI Systems does not sell, rent, share, or disclose mobile phone numbers,
               SMS opt-in data, or SMS consent information to third parties or affiliates for
               marketing or promotional purposes. We do not send promotional or unsolicited SMS

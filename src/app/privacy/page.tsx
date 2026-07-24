@@ -81,6 +81,11 @@ export default function PrivacyPolicy() {
               not a condition of purchase.
             </p>
             <p className="mt-4">
+              During each call, our AI assistant asks: May I send you a text message with your
+              appointment details and reminders? You can reply STOP at any time to opt out. SMS is
+              sent only after the customer verbally agrees.
+            </p>
+            <p className="mt-4">
               The CyberWolf AI Systems business owner separately opts in to receive call or
               task-status notifications by directly configuring and authorizing the owner&apos;s own
               mobile number in the assistant service.
