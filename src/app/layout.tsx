@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { metadataBase } from "@/lib/seo";
 import { createBusinessSchema } from "@/lib/schema";
@@ -86,6 +87,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
