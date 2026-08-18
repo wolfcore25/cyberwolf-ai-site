@@ -1,16 +1,18 @@
 "use client";
 
-import Vapi from "@vapi-ai/web";
 import { useEffect, useRef, useState } from "react";
 
 type VoiceStatus = "idle" | "connecting" | "live" | "ended" | "error" | "unconfigured";
+type VapiClient = import("@vapi-ai/web").default;
 
 const vapiPublicKey = process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY;
 const vapiAssistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
 
 export function VapiWidgetPlaceholder() {
   const configured = Boolean(vapiPublicKey && vapiAssistantId);
-  const vapiRef = useRef<Vapi | null>(null);
+  const vapiRef = useRef<VapiClient | null>(null);
+  const initializationRef = useRef<Promise<VapiClient> | null>(null);
+  const mountedRef = useRef(true);
   const [status, setStatus] = useState<VoiceStatus>(configured ? "idle" : "unconfigured");
   const [consoleLines, setConsoleLines] = useState<string[]>([
     configured
@@ -19,50 +21,77 @@ export function VapiWidgetPlaceholder() {
   ]);
 
   useEffect(() => {
-    if (!configured || !vapiPublicKey) {
-      return;
-    }
-
-    const vapi = new Vapi(vapiPublicKey);
-    vapiRef.current = vapi;
-
-    const addLine = (line: string) => {
-      setConsoleLines((current) => [line, ...current].slice(0, 5));
-    };
-
-    vapi.on("call-start", () => {
-      setStatus("live");
-      addLine("Call connected. CyberWolf is listening.");
-    });
-
-    vapi.on("call-end", () => {
-      setStatus("ended");
-      addLine("Call ended.");
-    });
-
-    vapi.on("speech-start", () => {
-      addLine("CyberWolf is speaking.");
-    });
-
-    vapi.on("speech-end", () => {
-      addLine("CyberWolf finished speaking.");
-    });
-
-    vapi.on("error", (error) => {
-      console.error("VAPI widget error", error);
-      setStatus("error");
-      addLine("Voice connection hit an error. Please try again.");
-    });
+    mountedRef.current = true;
 
     return () => {
-      vapi.removeAllListeners();
-      void vapi.stop().catch(() => undefined);
+      mountedRef.current = false;
+      const vapi = vapiRef.current;
+      vapi?.removeAllListeners();
+      void vapi?.stop().catch(() => undefined);
       vapiRef.current = null;
     };
-  }, [configured]);
+  }, []);
+
+  const addLine = (line: string) => {
+    setConsoleLines((current) => [line, ...current].slice(0, 5));
+  };
+
+  const initializeVapi = async () => {
+    if (!vapiPublicKey) {
+      throw new Error("VAPI public key is not configured.");
+    }
+
+    if (vapiRef.current) {
+      return vapiRef.current;
+    }
+
+    if (!initializationRef.current) {
+      initializationRef.current = import("@vapi-ai/web")
+        .then(({ default: Vapi }) => {
+          if (!mountedRef.current) {
+            throw new Error("Voice demo was closed before initialization completed.");
+          }
+
+          const vapi = new Vapi(vapiPublicKey);
+
+          vapi.on("call-start", () => {
+            setStatus("live");
+            addLine("Call connected. CyberWolf is listening.");
+          });
+
+          vapi.on("call-end", () => {
+            setStatus("ended");
+            addLine("Call ended.");
+          });
+
+          vapi.on("speech-start", () => {
+            addLine("CyberWolf is speaking.");
+          });
+
+          vapi.on("speech-end", () => {
+            addLine("CyberWolf finished speaking.");
+          });
+
+          vapi.on("error", (error) => {
+            console.error("VAPI widget error", error);
+            setStatus("error");
+            addLine("Voice connection hit an error. Please try again.");
+          });
+
+          vapiRef.current = vapi;
+          return vapi;
+        })
+        .catch((error) => {
+          initializationRef.current = null;
+          throw error;
+        });
+    }
+
+    return initializationRef.current;
+  };
 
   const startCall = async () => {
-    if (!configured || !vapiAssistantId || !vapiRef.current) {
+    if (!configured || !vapiAssistantId) {
       setStatus("unconfigured");
       return;
     }
@@ -70,7 +99,8 @@ export function VapiWidgetPlaceholder() {
     try {
       setStatus("connecting");
       setConsoleLines((current) => ["Requesting microphone access and starting voice demo.", ...current].slice(0, 5));
-      await vapiRef.current.start(vapiAssistantId);
+      const vapi = await initializeVapi();
+      await vapi.start(vapiAssistantId);
     } catch (error) {
       console.error("Unable to start VAPI call", error);
       setStatus("error");
