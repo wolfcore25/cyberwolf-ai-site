@@ -18,6 +18,7 @@ export function SiteFooter() {
             ["Web Solutions", "/web-solutions"],
             ["Book the Build Call", "#book"],
             ["Contact", "/contact"],
+            ["SMS Consent", "/sms-consent"],
             ["Privacy", "/privacy"],
             ["Terms", "/terms"],
           ].map(([label, href]) =>

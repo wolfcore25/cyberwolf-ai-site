@@ -12,6 +12,7 @@ const routes = [
   "/web-solutions",
   "/dineline",
   "/contact",
+  "/sms-consent",
   "/privacy",
   "/terms",
 ];

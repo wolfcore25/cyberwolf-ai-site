@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: July 13, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: September 3, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -81,9 +81,21 @@ export default function PrivacyPolicy() {
               not a condition of purchase.
             </p>
             <p className="mt-4">
-              During each call, our AI assistant asks: May I send you a text message with your
-              appointment details and reminders? You can reply STOP at any time to opt out. SMS is
-              sent only after the customer verbally agrees.
+              Before asking for consent, our representative or AI voice assistant reads: Before
+              you decide, you can review the CyberWolf AI Systems Privacy Policy at
+              https://cyberwolfaisystems.com/privacy and Terms and Conditions at
+              https://cyberwolfaisystems.com/terms. Do you agree to receive individual
+              transactional text messages from CyberWolf AI Systems about your appointment,
+              requested follow-up, or call status at the mobile number you provide? Message
+              frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP
+              for help. Consent is not a condition of purchase.
+            </p>
+            <p className="mt-4">
+              The complete public opt-in process is available on our{" "}
+              <Link href="/sms-consent" className="text-[var(--cyber-blue)] hover:underline">
+                SMS Consent page
+              </Link>
+              .
             </p>
             <p className="mt-4">
               The CyberWolf AI Systems business owner separately opts in to receive call or
@@ -168,7 +180,9 @@ export default function PrivacyPolicy() {
             <p>
               <strong className="text-white">CyberWolf AI Systems</strong><br />
               Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a><br />
-              Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a>
+              Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a><br />
+              SMS consent: <Link href="/sms-consent" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/sms-consent</Link><br />
+              Terms and Conditions: <Link href="/terms" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/terms</Link>
             </p>
           </section>
         </div>
