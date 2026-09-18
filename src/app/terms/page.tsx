@@ -105,6 +105,18 @@ export default function TermsOfService() {
                 .
               </p>
             </div>
+            <div className="mt-6 rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-5">
+              <h3 className="text-lg font-semibold text-white">StriperLine safety notice</h3>
+              <p className="mt-3">
+                StriperLine provides AI-generated fishing information that may be incomplete,
+                delayed, or incorrect. It is not official weather, marine, navigation,
+                emergency, licensing, or fishing-regulation guidance. Users must verify
+                forecasts, conditions, closures, seasons, size and bag limits, and safety
+                requirements with NOAA, the U.S. Coast Guard, and the relevant state agency
+                before acting. In an emergency, call 911 or the Coast Guard; do not rely on
+                StriperLine.
+              </p>
+            </div>
           </section>
 
           <section>

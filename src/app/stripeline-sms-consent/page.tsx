@@ -62,6 +62,22 @@ export default function StriperLineSmsConsentPage() {
             </ul>
           </section>
 
+          <section className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-6 md:p-8">
+            <h2 className="mb-3 text-xl font-semibold text-white">CyberWolf safety notice</h2>
+            <p>
+              StriperLine is an AI fishing-information assistant operated by CyberWolf AI
+              Systems. Its responses may be incomplete, delayed, or incorrect. StriperLine is
+              not a substitute for official weather, marine, navigation, emergency, licensing,
+              or fishing-regulation sources.
+            </p>
+            <p className="mt-4">
+              Always verify forecasts, on-water conditions, closures, seasons, size and bag
+              limits, and safety requirements with NOAA, the U.S. Coast Guard, and the relevant
+              state agency before acting. In an emergency, call 911 or the Coast Guard; do not
+              rely on StriperLine.
+            </p>
+          </section>
+
           <section>
             <h2 className="mb-3 text-xl font-semibold text-white">Privacy and program terms</h2>
             <p>
