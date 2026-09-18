@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useSyncExternalStore } from "react";
 
 type ConsentReceipt = {
   id: string;
@@ -8,12 +8,56 @@ type ConsentReceipt = {
   maskedPhone: string;
 };
 
+const consentStorageKey = "cyberwolf:stripeline-sms-consent";
+const consentSavedEvent = "cyberwolf:stripeline-sms-consent-saved";
+
+function subscribeToConsentReceipt(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(consentSavedEvent, onStoreChange);
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(consentSavedEvent, onStoreChange);
+  };
+}
+
+function getConsentReceiptSnapshot() {
+  return localStorage.getItem(consentStorageKey) ?? "";
+}
+
+function parseConsentReceipt(stored: string): ConsentReceipt | null {
+  if (!stored) return null;
+
+  try {
+    const parsed = JSON.parse(stored) as Partial<ConsentReceipt>;
+    if (
+      typeof parsed.id === "string" &&
+      typeof parsed.createdAt === "string" &&
+      typeof parsed.maskedPhone === "string"
+    ) {
+      return {
+        id: parsed.id,
+        createdAt: parsed.createdAt,
+        maskedPhone: parsed.maskedPhone,
+      };
+    }
+  } catch {
+    // Leave an invalid local receipt hidden without changing stored browser data.
+  }
+
+  return null;
+}
+
 export function StriperLineConsentForm() {
   const [phone, setPhone] = useState("");
   const [ownsNumber, setOwnsNumber] = useState(false);
   const [acceptsSms, setAcceptsSms] = useState(false);
   const [error, setError] = useState("");
-  const [receipt, setReceipt] = useState<ConsentReceipt | null>(null);
+  const storedReceipt = useSyncExternalStore(
+    subscribeToConsentReceipt,
+    getConsentReceiptSnapshot,
+    () => "",
+  );
+  const receipt = parseConsentReceipt(storedReceipt);
 
   function saveConsent(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -38,8 +82,8 @@ export function StriperLineConsentForm() {
       createdAt: new Date().toISOString(),
       maskedPhone: `***-***-${normalized.slice(-4)}`,
     };
-    localStorage.setItem("cyberwolf:stripeline-sms-consent", JSON.stringify(record));
-    setReceipt(record);
+    localStorage.setItem(consentStorageKey, JSON.stringify(record));
+    window.dispatchEvent(new Event(consentSavedEvent));
   }
 
   return (
