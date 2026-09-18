@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: September 3, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: September 18, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -39,6 +39,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 space-y-1">
               <li>Name and contact information, including email address and phone number, when you contact us or request service</li>
               <li>Restaurant lookup, booking request, and support information you choose to provide through DineLine</li>
+              <li>Striped bass fishing questions, requested condition summaries, and trip-log notes you choose to provide through StriperLine</li>
               <li>Business information relevant to project scoping or customer support</li>
               <li>Communications via email, phone, SMS, or messaging platforms</li>
             </ul>
@@ -59,6 +60,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-semibold text-white mb-3">3. How We Use Your Information</h2>
             <ul className="list-disc pl-6 space-y-1">
               <li>To provide DineLine restaurant lookup and booking assistance you request</li>
+              <li>To provide owner-requested StriperLine fishing answers, condition summaries, trip logging, and alerts</li>
               <li>To send customer-requested appointment confirmations, scheduling reminders, callback confirmations, booking status updates, requested follow-up information, call or task-status notifications, and support replies</li>
               <li>To respond to inquiries and provide customer support</li>
               <li>To operate, maintain, and improve CyberWolf AI Systems services</li>
@@ -115,6 +117,28 @@ export default function PrivacyPolicy() {
               <strong className="text-white">STOP</strong>. Users may reply{" "}
               <strong className="text-white">HELP</strong> for assistance.
             </p>
+            <div className="mt-6 rounded-2xl border border-[var(--cyber-border)] bg-white/[0.03] p-5">
+              <h3 className="text-lg font-semibold text-white">StriperLine owner-only SMS program</h3>
+              <p className="mt-3">
+                Separately, the CyberWolf AI Systems owner may enroll one owner-controlled mobile
+                number in StriperLine. Messages may include answers to the owner&apos;s striped bass
+                fishing questions, requested current-condition summaries, trip-log confirmations,
+                clarification questions, and owner-only condition alerts. The owner enters the
+                number and manually selects separate ownership and SMS-consent checkboxes that are
+                unchecked by default. Message frequency varies. Message and data rates may apply.
+                Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.
+              </p>
+              <p className="mt-3">
+                StriperLine does not enroll fishing clients or other third parties. Submitted
+                fishing questions and trip notes may be processed by telecommunications, hosting,
+                and AI service providers only as needed to provide the requested service. The
+                StriperLine opt-in process is available on the{" "}
+                <Link href="/stripeline-sms-consent" className="text-[var(--cyber-blue)] hover:underline">
+                  StriperLine SMS Consent page
+                </Link>
+                .
+              </p>
+            </div>
           </section>
 
           <section>
@@ -182,6 +206,7 @@ export default function PrivacyPolicy() {
               Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a><br />
               Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a><br />
               SMS consent: <Link href="/sms-consent" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/sms-consent</Link><br />
+              StriperLine SMS consent: <Link href="/stripeline-sms-consent" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/stripeline-sms-consent</Link><br />
               Terms and Conditions: <Link href="/terms" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/terms</Link>
             </p>
           </section>

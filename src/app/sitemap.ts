@@ -13,6 +13,7 @@ const routes = [
   "/dineline",
   "/contact",
   "/sms-consent",
+  "/stripeline-sms-consent",
   "/privacy",
   "/terms",
 ];

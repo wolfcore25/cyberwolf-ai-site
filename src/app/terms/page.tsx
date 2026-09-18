@@ -20,7 +20,7 @@ export default function TermsOfService() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
-        <p className="text-gray-500 text-sm mb-12">Last updated: September 3, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Last updated: September 18, 2026</p>
 
         <div className="prose prose-invert max-w-none space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -35,9 +35,10 @@ export default function TermsOfService() {
             <h2 className="text-xl font-semibold text-white mb-3">2. Services</h2>
             <p>
               CyberWolf AI Systems provides AI agent development, DineLine voice-based restaurant
-              booking assistance, phone automation, multi-agent system architecture, consulting,
-              and workflow automation services. The specific scope of any business engagement will
-              be defined in a separate project agreement or statement of work.
+              booking assistance, the owner-operated StriperLine fishing assistant, phone
+              automation, multi-agent system architecture, consulting, and workflow automation
+              services. The specific scope of any business engagement will be defined in a
+              separate project agreement or statement of work.
             </p>
           </section>
 
@@ -83,6 +84,27 @@ export default function TermsOfService() {
               marketing or promotional purposes. We do not send promotional or unsolicited SMS
               messages and do not use purchased, rented, or third-party lead lists.
             </p>
+            <div className="mt-6 rounded-2xl border border-[var(--cyber-border)] bg-white/[0.03] p-5">
+              <h3 className="text-lg font-semibold text-white">StriperLine owner-only SMS terms</h3>
+              <p className="mt-3">
+                The CyberWolf AI Systems owner may separately enroll one owner-controlled mobile
+                number in StriperLine. Transactional messages may include answers to the
+                owner&apos;s striped bass fishing questions, requested current-condition summaries,
+                trip-log confirmations, clarification questions, and owner-only condition alerts.
+                The owner must enter the number and manually select separate ownership and SMS-
+                consent checkboxes that open unchecked. Message frequency varies. Message and data
+                rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition
+                of purchase. StriperLine does not send marketing messages or messages to fishing
+                clients or other third parties.
+              </p>
+              <p className="mt-3">
+                The complete StriperLine process is available on the{" "}
+                <Link href="/stripeline-sms-consent" className="text-[var(--cyber-blue)] hover:underline">
+                  StriperLine SMS Consent page
+                </Link>
+                .
+              </p>
+            </div>
           </section>
 
           <section>
@@ -195,6 +217,7 @@ export default function TermsOfService() {
               Contact email: <a href="mailto:gregs@cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">gregs@cyberwolfaisystems.com</a><br />
               Website: <a href="https://cyberwolfaisystems.com" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com</a><br />
               SMS consent: <Link href="/sms-consent" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/sms-consent</Link><br />
+              StriperLine SMS consent: <Link href="/stripeline-sms-consent" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/stripeline-sms-consent</Link><br />
               Privacy Policy: <Link href="/privacy" className="text-[var(--cyber-blue)] hover:underline">https://cyberwolfaisystems.com/privacy</Link>
             </p>
           </section>
