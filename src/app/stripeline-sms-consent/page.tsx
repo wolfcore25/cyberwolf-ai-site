@@ -46,6 +46,11 @@ export default function StriperLineSmsConsentPage() {
               send marketing, promotional messages, bulk messages, or messages to fishing clients
               or other third parties.
             </p>
+            <p className="mt-4">
+              SMS is an optional channel. StriperLine voice service remains available at +1
+              848-266-6003 without SMS enrollment, a mobile-number submission, or text-message
+              consent.
+            </p>
           </section>
 
           <StriperLineConsentForm />
@@ -57,7 +62,7 @@ export default function StriperLineSmsConsentPage() {
               <li>Message and data rates may apply.</li>
               <li>Reply STOP to opt out at any time.</li>
               <li>Reply HELP for help.</li>
-              <li>Consent is not a condition of purchase.</li>
+              <li>SMS consent is optional and is not a condition of purchase or voice-service use.</li>
               <li>No purchased, rented, shared, or third-party marketing lists are used.</li>
             </ul>
           </section>
